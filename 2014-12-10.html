@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<link href="css/bootstrap.css" type="text/css" rel='stylesheet'>
+	</head>
+	<body>
+		<div class="container">
+			<!-- <div ng-app="">
+
+				<p>在输入框中尝试输入:</p>
+				<p>
+					姓名:
+					<input type="text" ng-model="name"></p>
+				<p ng-bind="name"></p>
+
+			</div> -->
+			<div id="demo"></div>
+			<script type="text/javascript">
+				function myfunction(x , y){
+					if(y == undefined){
+						y = 0;
+					}
+					return x * y
+				}
+				document.getElementById('demo').innerHTML=myfunction(4)
+			</script>
+		</div>
+ 	</body>
+</html>
+ 

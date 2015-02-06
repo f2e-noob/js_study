@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="css/style.css" type="text/css" rel="stylesheet">
+	<link href="css/bootstrap.css" type="text/css" rel='stylesheet'></head>
+<body>
+	<div class="container">
+		<script type="text/javascript">
+				function open_menu(code_name,submenu){
+					$('.menu_node').removeClass('active');
+					$('#all_pro').addClass('open');
+					//$('#all_pro ul').css('display','block');
+					$('#'+code_name).parents('.submenu').css('display','block');
+					$('#'+code_name).addClass('open');
+					$('#'+code_name).find('.submenu').css('display','block');
+					$('#'+code_name+'_'+submenu).addClass('active');
+					}
+					function delall(){
+					$('.msg').remove();
+					$('#u_msg').html('0');
+					}
+					jQuery(function($){
+					$('#ifcontext').css('height',($(window).height()-$('#navbar').height()-20)+"px");
+					$('.menu_node').click(function(event) {
+					$('.menu_node').removeClass('active');
+					$(this).addClass('active');
+					});
+					function append_job(data){
+					var li = $('
+				<li>
+					');
+					if(data['alarm']){
+					var a = $('
+					<a>
+						').attr('href','/monitor/alarm').attr('class','clearfix').attr('target','context');
+					a.append($('
+						<span>
+							').html(data['body']));
+					li.append(a);
+					li.insertBefore($('#alarmlst li').eq(1));
+					}else if(data['job']){
+					var a = $('
+							<a>
+								').attr('href','/monitor/tasker').attr('class','clearfix').attr('target','context');
+					a.append($('
+								<span>
+									').html(data['body']));
+					li.append(a);
+					li.insertBefore($('#joblst li').eq(1));
+					}else if(data['msg']){
+					var a = $('
+									<a>
+										').attr('href','/monitor/msg').attr('class','clearfix').attr('target','context');
+					a.append($('
+										<span>
+											').html(data['body']));
+					li.attr('class','msg');
+					li.append(a);
+					li.insertBefore($('#msglst li').eq(1));
+					}
+					}
+					var messager = {
+					socket: null,
+					msg_n: 0,
+					start: function() {
+					var url = "ws://" + location.host + "/msgsocket";
+					messager.socket = new WebSocket(url);
+					messager.socket.onmessage = function(event) {
+					//var data = eval(event.data);
+					var data = eval('(' + event.data + ')');
+					console.log('msg:',data);
+					//window.UI.alertMessage(data.body);
+					if(data['job']){
+					$('#u_job').html(data['job']);
+					}
+					if(data['alarm']){
+					$('#u_alarm').html(data['alarm']);
+					}
+					if(data['msg']){
+					messager.msg_n = parseInt($('#u_msg').text()) + 1;
+					$('#u_msg').html(messager.msg_n);
+					//$('#u_msg').html(data['msg']);
+					}
+					append_job(data);
+					}
+					messager.socket.onclose = function(event){
+					//5秒后重连接
+					window.setTimeout(messager.start, 5000);
+					}
+					messager.socket.onopen = function(event){
+					console.log('msgsocket:',event);
+					}
+					},
+					};
+					messager.start();
+					});
+			</script>
+	</div>
+</body>
+</html>
