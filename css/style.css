@@ -1,9 +1,11 @@
 body{
 	padding:0; 
-	margin:0; 
+	margin:0 auto; 
 	font-size:14px;
 	color:#303030;
-	font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;}
+	font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+	width:1000px;
+}
 * {margin:0; padding:0;}
 ul{margin:0;
 	padding:0;

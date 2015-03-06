@@ -1,4 +1,5 @@
-## Unexpected identifier yichang
+2015-3-5
+## Unexpected identifier 异常
 ```
         var options = {
             points: {'show':true},
@@ -26,6 +27,17 @@
             },
         };
  ```
-语法错误！
+语法异常！
 
-## Unexpected identifier yichang
+2015-3-6
+## Uncaught ReferenceError: 
+
+```
+		util is not defined
+		使用未定义的语法！defined
+
+```
+
+##  Uncaught SyntaxError: 
+		Unexpected token 
+		意外的标记！！

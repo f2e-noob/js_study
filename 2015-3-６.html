@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<style type="text/css">
+			 
+		</style>
+	</head>
+	<body>
+		<h2>JavaScript：改变 HTML 内容</h2>
+		<script type="text/javascript">
+			function clickCont(){
+				x = document.getElementById("demo1");
+				x.innerHTML="hello word";
+			}
+		</script>
+		<p id="demo1">Javascript 代码！！！！</p>
+		<button type="button"onclick="clickCont()" class="btn btn-success">点击</button>
+		<h2>JavaScript：改变 HTML 图像</h2>
+		<script type="text/javascript">
+			function changeImages(){
+				Img = document.getElementById('myimage');
+				if(Img.src.match("bulbon")){
+					Img.src="images/eg_bulboff.gif"	
+				}else{
+					Img.src="images/eg_bulbon.gif"	
+				}
+			}
+		</script>
+		<div class="row">
+			<div class="col-md-3">
+				<img src="images/eg_bulboff.gif" id="myimage" onclick="changeImages()">
+			</div>
+			<div class="col-md-9">
+				<h2><p class="label label-primary">点击图片灯泡亮起来！</p></h2>
+				<h5>match()定义和用法</h5>
+				match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
+			</div>
+		</div>
+		<h2>JavaScript：改变 HTML 样式</h2>
+		<script type="text/javascript">
+			function styleCss(){
+				x = document.getElementById('style');
+				x.style.color='red'
+			}
+		</script>
+		<p id="style">Javascript改变字体的样式</p>
+		<button class="btn btn-warning" onclick="styleCss()">点击按钮</button>
+		<h2>JavaScript：验证输入</h2>
+		<script>
+			function Num(){
+				var N =document.getElementById('textNum').value;
+				if (N == "" || isNaN(N))
+			}
+		</script>
+		<input type="text" id="textNum" class="form-control" style="width:150px; display:inline-block">
+		<button class="btn btn-primary" onclick="Num()" style="display:inline-block">点击按钮</button>
+		isNaN() 函数用于检查其参数是否是非数字值。
+ 	</body>
+</html>
+ 
