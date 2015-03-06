@@ -52,15 +52,41 @@
 		<script>
 			function Num(){
 				var N =document.getElementById('textNum').value;
-				if (N == "" || isNaN(N))
+				if ( N == "" || isNaN(N))
 				{
-					alert("not num") 
+					alert("不是一个数字") 
 				}
 			}
-		</script>
+		</script>	
 		<input type="text" id="textNum" class="form-control" style="width:150px; display:inline-block">
 		<button class="btn btn-primary" onclick="Num()" style="display:inline-block">点击按钮</button>
 		isNaN() 函数用于检查其参数是否是非数字值。
+		<h2> body 中的 JavaScript</h2>
+		<script type="text/javascript">
+			document.write("<h3>标题一</h3>");
+			document.write("<h4>标题二</h4>");
+		</script>
+		body 中的 JavaScript
+
+		<h2> head中的 JavaScript 函数</h2>
+		<script type="text/javascript">
+			function headText(){
+				document.getElementById("text").innerHTML='这是改变的文字';
+			}
+		</script>
+		<div id="text">文字内容</div>
+		<button class="btn btn-danger" onclick="headText()">点击按钮</button>
+		<H2>操作 HTML 元素</H2>
+		<script type="text/javascript">
+			document.write('通过ID元素,访问html元素！！')
+		</script>
+		<h2>写到文档输出</h2>
+		<script type="text/javascript">
+			function demotext(){
+				document.write('改变的文字')
+			}
+		</script>
+		<button class="btn btn-warning" onclick="demotext()">点击改变文字</button>
  	</body>
 </html>
  
