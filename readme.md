@@ -26,7 +26,7 @@
             },
         };
  ```
- ## Unexpected identifier yichang
+ ## Unexpected identifier 异常
 ```
        
  ```
@@ -51,4 +51,33 @@ false   var x=document.getElementById("demo").value();
 
 ture   var x=document.getElementById("demo").value;
         
+```
+
+
+2015-3-8
+## Uncaught TypeError: Cannot set property 'innerHTML' of null
+        
+        无法设置属性列表的空的innerHTML”
+```
+ false       
+            
+            <script type="text/javascript">
+                document.getElementById("txt1").innerHTML="Hello Word"
+                document.getElementById('txt2').innerHTML="Hello Word";
+            </script>
+            JavaScript 代码（或者只有 JavaScript）是 JavaScript 语句的序列。
+    浏览器会按照编写顺序来执行每条语句。<br/>
+            <p id="txt1"> </p>
+            <p id="txt2"> </p>
+
+true        
+          
+            JavaScript 代码（或者只有 JavaScript）是 JavaScript 语句的序列。
+    浏览器会按照编写顺序来执行每条语句。<br/>
+            <p id="txt1"> </p>
+            <p id="txt2"> </p>  
+             <script type="text/javascript">
+                document.getElementById("txt1").innerHTML="Hello Word"
+                document.getElementById('txt2').innerHTML="Hello Word";
+            </script>   
 ```

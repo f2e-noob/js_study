@@ -5,17 +5,69 @@
 		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
 		<link href="css/style.css" type="text/css" rel="stylesheet">
 		<style type="text/css">
-			 
+			 	p{
+			 		line-height: 30px;
+			 	}
 		</style>
 	</head>
 	<body>
-		<h2>写到文档输出</h2>
+		<h2>JavaScript 代码</h2>
+		JavaScript 代码（或者只有 JavaScript）是 JavaScript 语句的序列。
+浏览器会按照编写顺序来执行每条语句。<br/><br/>
+		<p id="txt1"> </p>
+		<p id="txt2"> </p>
 		<script type="text/javascript">
-			function demotext(){
-				document.write('改变的文字')
+			document.getElementById("txt1").innerHTML="Hello Word"
+			document.getElementById('txt2').innerHTML="Hello Word";
+		</script>
+
+		<H2>对代码行进行折行</H2>
+		<script type="text/javascript">
+			document.write("hello \
+				word")
+		</script>
+		<h2>Javascript注释</h2>
+		计算Y的值：<span id="add_num"></span>
+		<script type="text/javascript">
+			var x = 5;  // 声明 x 并赋予x的值为5
+			var y = x + 2; // 声明 x 并赋予y+2的值
+			document.getElementById('add_num').innerHTML= y;
+		</script>
+		<p><b>注释</b>// 注释可放于段落结尾 /* 多行注释 </p>
+		<h2>JavaScript 变量</h2>
+		<script type="text/javascript">
+			var x = 2;
+			var y = 3;
+			var z= x + y;
+			document.write( x + '<br/>');
+			document.write( y + '<br/>');
+			document.write( z + '<br/>');
+
+			var pi=3.14;
+			var name="Bill Gates";
+			var answer='Yes I am!';
+
+			document.write(pi + "<br>");
+			document.write(name + "<br>");
+			document.write(answer + "<br>");
+		</script>
+		<h2>声明（创建） JavaScript 变量</h2>
+		声明Javascript变量并赋予在p中：<span id="carname-num"></span>
+		<script type="text/javascript">
+			var carname = "value";
+			document.getElementById("carname-num").innerHTML=carname; 
+		</script>
+		<h1>字符串、数字、布尔、数组、对象、Null、Undefined</h1>
+		<h2>JavaScript 数组</h2>
+		<script type="text/javascript">
+			var cars = new Array();
+				cars[0] = "Alone";
+				cars[1] = 'Block';
+				cars[2] = 'Cbows';
+			for ( i=0; i<cars.length; i++){
+				document.write([i] + "<br/>");
 			}
 		</script>
-		<button class="btn btn-warning" onclick="demotext()">点击改变文字</button>
  	</body>
 </html>
  
