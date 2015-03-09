@@ -48,15 +48,22 @@
 		<p>在一般的段落文字中，你可以使用反引号 ` 来标记代码区段，区段内的 &、< 和 > 都会被自动的转换成 HTML 实体，这项特性让你可以很容易的在代码区段内插入 HTML 码：</p>
 		<p>发动机撒飞机的撒范德萨空间看节点外分泌`<标注>`平凡的事`#标注`</p>
 		
-		<script>
-			function myFunction(name,job)
-			{
-				alert("Welcome " + name + ", the " + job);
+		<h2>调用带参数的函数</h2>
+		<script type="text/javascript">
+			function myfunction(name,job){
+				alert(" wellcome " + name + " the " + job);
 			}
 		</script>
-		<p>点击这个按钮，来调用带参数的函数。</p>
-
-		<button class="btn btn-primary" onclick="myFunction('Bill Gates','CEO')">点击这里</button>
- 	</body>
+		<button class="btn btn-primary" onclick="myfunction('Bill','CEO')">点击按钮</button>
+		<button class="btn btn-warning" onclick="myfunction('Towibla tiw','IT')">点击按钮</button>
+		<h2>带有返回值的函数</h2>
+		
+		<div id="mult-num"></div>
+		<script type="text/javascript">
+			function mult(a,b){
+				return a * b
+			}
+			document.getElementById('mult-num').innerHTML=mult(4,3);
+		</script>
 </html>
  

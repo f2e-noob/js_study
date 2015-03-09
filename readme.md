@@ -84,4 +84,29 @@ true
 
 2015-3-9
 
- 
+## Uncaught TypeError: Cannot set property 'innerHTML' of null
+
+    未捕获的类型错误：不能设置为null财产“的innerHTML ”
+
+```
+false 
+
+        <div id="mult-num"></div>
+        <script type="text/javascript">
+            function mult(a,b){
+                return a * b
+            }
+            document.getElementById('mult-num').innerHTML=(4,3);
+        </script>
+
+true     
+        
+        <div id="mult-num"></div>
+        <script type="text/javascript">
+            function mult(a,b){
+                return a * b
+            }
+            document.getElementById('mult-num').innerHTML=mult(4,3);
+        </script>
+
+```
