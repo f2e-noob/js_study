@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<style type="text/css">
+		 	p{
+		 		line-height: 30px;
+		 	}
+		</style>
+	</head>
+	<body>
+		<h1>Markdown学习</h1>
+		<h2>段落、标题、区块代码</h2>
+		 Markdown 支持两种标题的语法，Setext 和 atx 形式。Setext 形式是用底线的形式，利用 = （最高阶标题）和 - （第二阶标题），Atx 形式在行首插入 1 到 6 个 # ，对应到标题 1 到 6 阶。
+
+区块引用则使用 email 形式的 '>' 角括号。
+ 		<h2>修辞和强调</h2>
+		<h2>调用带参数的函数</h2>
+		<p>
+			**This is the second paragraph in the blockquote.**
+			_ This is the second paragraph in the blockquote._
+		</p>
+		<h2>列表</h2>
+		<p>无序列表使用星号、加号和减号来做为列表的项目标记，这些符号是都可以使用的，使用星号</p>
+		<p>有序的列表则是使用一般的数字接着一个英文句点作为项目标记</p>
+		<p>
+			* Candy.
+			* Gum.
+			* Booze
+			- Candy.
+			- Gum.
+			- Booze
+			+ Candy.
+			+ Gum.
+			+ Booze
+			1. Candy.
+			2. Gum.
+			3. Booze
+		</p>
+		<h2>链接</h2>
+		<p>Markdown 支援两种形式的链接语法： 行内 和 参考 两种形式，两种都是使用角括号来把文字转成连结。</p>
+		<p>this is for [example](http://www.baidu.com/ "website") link</p>
+		<h2>图片</h2>
+		<p>![][id]:</p>
+		<h2>代码</h2>
+		<p>在一般的段落文字中，你可以使用反引号 ` 来标记代码区段，区段内的 &、< 和 > 都会被自动的转换成 HTML 实体，这项特性让你可以很容易的在代码区段内插入 HTML 码：</p>
+		<p>发动机撒飞机的撒范德萨空间看节点外分泌`<标注>`平凡的事`#标注`</p>
+		
+		<script>
+			function myFunction(name,job)
+			{
+				alert("Welcome " + name + ", the " + job);
+			}
+		</script>
+		<p>点击这个按钮，来调用带参数的函数。</p>
+
+		<button class="btn btn-primary" onclick="myFunction('Bill Gates','CEO')">点击这里</button>
+ 	</body>
+</html>
+ 
