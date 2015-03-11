@@ -114,4 +114,18 @@ true
 2015-3-10
 ## Uncaught SyntaxError: Unexpected end of input
    
-   未捕获的syntaxerror:输入意外结束
+        未捕获的syntaxerror:输入意外结束
+
+2015-3-11
+
+## Uncaught ReferenceError: Invalid left-hand side in assignment 
+
+        未捕获的ReferenceError ：无效的左手侧赋值
+
+false 
+
+        
+        value=''|| value=num
+
+true
+        value==''|| value==num
