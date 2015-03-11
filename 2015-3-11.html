@@ -125,6 +125,43 @@
 			var x = document.getElementById('imgSrc');
 			x.src = "images/eg_bulbon.gif"
 		</script>
+		<h2>改变 HTML 样式</h2>
+		<p id="pStyle">段落的测试文字</p>
+		<script type="text/javascript">
+			document.getElementById('pStyle').style.color = "red";
+			document.getElementById('pStyle').style.fontFamily = "微软雅黑";
+			document.getElementById('pStyle').style.fontSize = "16px";
+		</script>
+		<p id="pStyle2">段落文字的样式改变</p>
+		<button class="btn btn-info" onclick="document.getElementById('pStyle2').style.color='red'">点击按钮</button>
+		<h2>JavaScript 有能力对 HTML 事件做出反应</h2>
+		<div class="cirle" onmouseover="this.innerHTML='鼠标移动上去'" onmouseout="this.innerHTML='谢谢!'"></div>
+		<div class="squar" onclick="clickMeEvent(this)">点击这里</div>
+		<script type="text/javascript">
+			function clickMeEvent(obj)
+			{
+			if (obj.innerHTML=="再见")
+				{
+					obj.style.display="none";
+				}
+			else if (obj.innerHTML=="谢谢")
+				{
+					obj.innerHTML="再见";		
+				}
+			else if (obj.innerHTML=="点击这里<br>再次点击这里<br>再点一次")
+				{
+					obj.innerHTML="谢谢";		
+				}
+			else if (obj.innerHTML=="点击这里<br>再次点击这里")
+				{
+					obj.innerHTML=obj.innerHTML+"<br>再点一次";		
+				}
+			else
+				{
+					obj.innerHTML=obj.innerHTML+"<br>再次点击这里";
+				}
+			}
+		</script>
 	</body>
 </html>
  

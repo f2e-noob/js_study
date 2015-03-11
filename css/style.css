@@ -16,3 +16,25 @@ img{
 .clear{
 	clear:both;
 }
+.cirle{
+	width:200px;
+	height: 200px;
+	border-radius: 100px;
+	background:#e754c6;
+	color:#fff;
+	font-size:18px;
+	text-align: center;
+	line-height: 200px;
+	cursor: pointer;
+}
+.squar{
+	width:200px;
+	height: 150px;
+ 	background:#4bc2e5;
+	color:#fff;
+	font-size:18px;
+	text-align: center;
+	line-height: 20px;
+	padding-top:50px;
+	cursor: pointer;
+}
