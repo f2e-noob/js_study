@@ -10,8 +10,66 @@
 		 	}
 		</style>
 	</head>
-	<body>
-		 
+	<body onload="page()">
+		<h2>onchange 事件</h2>
+		<script type="text/javascript">
+			function upperCase(){
+				var x = document.getElementById('word');
+				x.value = x.value.toUpperCase();
+			}
+		</script>
+		<input type="text" id ="word" class="form-control" style="width:250px; display:inline;" onchange="upperCase()">　请输入英文字符串,会触发文本转换成大写!
+		<h4>此函数将 $arg 中的每个字符转换为等效的大写字符。</h4>
+		
+		<h2>onmouseover 和 onmouseout 事件</h2>
+		<p>运用到事件处理器调用函数</p>
+		<p class="squar" onmouseover="move(this)" onmouseout="out(this)">鼠标移动到上面去！</p>
+		<script type="text/javascript">
+			function move(obj){
+				obj.innerHTML = "谢谢！"
+			}
+			function out(obj){
+				obj.innerHTML = "鼠标移动到上面去！"
+			}
+		</script>
+		<h2>onmousedown、onmouseup 以及 onclick 事件</h2>
+		<p class="cirle" onmousedown="down(this)" onmouseup="up(this)">点击查看</p>
+		<script type="text/javascript">
+			function down(obj){
+				obj.style.background = "green";
+				obj.innerHTML = "谢谢！"
+			}
+			function up(obj){
+				obj.style.background = "red"
+				obj.innerHTML = "完成动作以后"
+			}
+		</script>
+		<h2>加载弹出一个页面</h2>
+		<script type="text/javascript">
+			function page(){
+				alert("欢迎访问该网站")
+			}
+		</script>
+		<h2>onfocus 事件处理器调用函数</h2>
+		<input type="text" class="form-control" style="width:250px;" onfocus="inputText(this)">
+		<script type="text/javascript">
+			function inputText(obj){
+				obj.style.background = "#e4e7e9"
+			}
+		</script>
+		<h2>创建新的 HTML 元素</h2>
+		<div id="div1">
+			<p>这是一个段落。</p>
+			<p>这是另一个段落。</p>		
+		</div>
+		<script type="text/javascript">
+			var para = document.createElement("p"); //.createElement()是在对象中创建一个对象
+			var node = document.createTextNode('需要插入的文字内容'); //.createTextNode()创建新文本节点,这个方法接受一个参数——要插入节点中的文本。
+			para.appendChild(node);
+			
+			var x = document.getElementById('div1');
+			x.appendChild(para);
+		</script>
 	</body>
 </html>
  
