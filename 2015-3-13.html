@@ -47,7 +47,7 @@
 		<h2>加载弹出一个页面</h2>
 		<script type="text/javascript">
 			function page(){
-				alert("欢迎访问该网站")
+				// alert("欢迎访问该网站")
 			}
 		</script>
 		<h2>onfocus 事件处理器调用函数</h2>
@@ -69,6 +69,19 @@
 			
 			var x = document.getElementById('div1');
 			x.appendChild(para);
+		</script>
+		<h2>删除已有的 HTML 元素</h2>
+		<div id="div2">
+			<p id="p1">这是段落一</p>
+			<p>这是段落二</p>
+		</div>
+		<script type="text/javascript">
+			// var parent = document.getElementById('div2');
+			// var child  = document.getElementById('p1');
+			// parent.removeChild(child);
+
+			var child=document.getElementById("p1");
+			child.parentNode.removeChild(child);
 		</script>
 	</body>
 </html>
