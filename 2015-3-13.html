@@ -10,7 +10,7 @@
 		 	}
 		</style>
 	</head>
-	<body onload="page()">
+	<body onload="startTime()">
 		<h2>onchange 事件</h2>
 		<script type="text/javascript">
 			function upperCase(){
@@ -176,8 +176,48 @@
 		<h3>getTime()返回毫秒</h3>
 		<script>
 			var time = new Date();
-			document.write("导出时间值：" + time.getTime() + "毫秒")
+			time.setFullYear(1980,3,12);
+			document.write("导出时间值：" + time.getTime() + "毫秒" + "<br/>");
+			
+			time.setFullYear(1980,10,20);
+			document.write(time + "<br/>");
+
+			document.write(time.toUTCString() + "<br/>")
+
+			var weekday = new Array(7)
+				weekday[0] = "星期一";
+				weekday[1] = "星期二";
+				weekday[2] = "星期三";
+				weekday[3] = "星期四";
+				weekday[4] = "星期五";
+				weekday[5] = "星期六";
+				weekday[6] = "星期七";
+			document.write('今天是：'+ weekday[time.getDay()])
 		</script>
+		<script type="text/javascript">
+			function startTime()
+			{
+			var today=new Date()
+			var h=today.getHours()
+			var m=today.getMinutes()
+			var s=today.getSeconds()
+			// add a zero in front of numbers<10
+			m=checkTime(m)
+			s=checkTime(s)
+			document.getElementById('txt').innerHTML=h+":"+m+":"+s
+			t=setTimeout('startTime()',500)
+			}
+
+			function checkTime(i)
+			{
+			if (i<10) 
+			  {i="0" + i}
+			  return i
+			}
+		</script>
+		<div class="" >
+			<div id="txt"></div>
+		</div>
 	</body>
 </html>
  
