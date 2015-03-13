@@ -83,6 +83,40 @@
 			var child=document.getElementById("p1");
 			child.parentNode.removeChild(child);
 		</script>
+		<h2>访问对象的属性</h2>
+		<script type="text/javascript">
+			var message="Hello world!";
+			var x=message.length;
+			document.write(x);
+		</script>
+		<h2>访问对象的方法</h2>
+		<script type="text/javascript">
+			var message="hello world!" 
+				x = message.toUpperCase() 
+			document.write(x);
+		</script>
+		<h2>创建直接的实例</h2>
+		<script type="text/javascript">
+			person = new Object();
+			person.firstname = "Bills"
+			person.lastname = "doon"
+			person.job = "IT"
+			person.age = 56
+			person={firstname:"Bill",lastname:"gates",age:56,eyecolor:"blue"}
+			// person = {firstname:"bils", age:23 , job: "IT"}  替代语法
+			document.write(person.firstname + " is year old " + person.age + " like " + person.job)
+		</script>
+		<h2>使用对象构造器(使用函数来构造对象)</h2>
+		<script type="text/javascript">
+			function person(firstname,lastname,job,age){
+				this.firstname = firstname;
+				this.lastname = lastname;
+				this.job = job;
+				this.age = age;
+			}
+			myfather = new person("Bills","TTTTTTTTTTTTTT","IT",23);
+			document.write(myfather.lastname + " is " + myfather.job + " like " + myfather.age + " year old ")
+		</script>
 	</body>
 </html>
  
