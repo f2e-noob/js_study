@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<style type="text/css">
+		 	p{
+		 		line-height: 30px;
+		 	}
+		</style>
+	</head>
+	<body onload="startTime()">
+		<script type="text/javascript">
+			function startTime()
+			{
+			var today=new Date()
+			var h=today.getHours()
+			var m=today.getMinutes()
+			var s=today.getSeconds()
+			// add a zero in front of numbers<10
+			m=checkTime(m)
+			s=checkTime(s)
+			document.getElementById('txt').innerHTML=h+":"+m+":"+s
+			t=setTimeout('startTime()',500)
+			}
+
+			function checkTime(i)
+			{
+			if (i<10) 
+			  {i="0" + i}
+			  return i
+			}
+		</script>
+		<div class="" >
+			<div id="txt"></div>
+		</div>
+	</body>
+</html>
+ 
