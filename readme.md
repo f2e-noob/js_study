@@ -129,3 +129,39 @@ false
 
 true
         value==''|| value==num
+
+
+2015-3-13
+## Uncaught TypeError: Cannot read property 'appendChild' of null
+
+        未捕获的类型错误：无法读取空财产“的appendChild ”
+
+false 
+        
+        <div class="div1">        //错误标记
+            <p>这是一个段落。</p>
+            <p>这是另一个段落。</p>     
+        </div>
+        <script type="text/javascript">
+            var para = document.createElement("p"); //.createElement()是在对象中创建一个对象
+            var node = document.createTextNode('需要插入的文字内容'); //.createTextNode()创建新文本节点,这个方法接受一个参数——要插入节点中的文本。
+            para.appendChild(node);
+            
+            var x = document.getElementById('div1');
+            x.appendChild(para);
+        </script>
+
+true
+        
+        <div id="div1">
+            <p>这是一个段落。</p>
+            <p>这是另一个段落。</p>     
+        </div>
+        <script type="text/javascript">
+            var para = document.createElement("p"); //.createElement()是在对象中创建一个对象
+            var node = document.createTextNode('需要插入的文字内容'); //.createTextNode()创建新文本节点,这个方法接受一个参数——要插入节点中的文本。
+            para.appendChild(node);
+            
+            var x = document.getElementById('div1');
+            x.appendChild(para);
+        </script>
