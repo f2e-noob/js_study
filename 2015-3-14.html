@@ -28,9 +28,55 @@
 		<h2>操作日期</h2>
 		<script type="text/javascript">
 			var mydate = new Date();
-			//mydate.setFullYear(2015,7)
-			document.write('导出时间：' + mydate.getTime() + "毫秒")
-		</script>						
+			// mydate.setFullYear(2015,7,9)
+			// document.write('导出时间：' + mydate.getTime() + "毫秒")
+			// mydate.setDate(mydate.getDate()+5)
+			var x = mydate.setDate(mydate.getDate()+5);
+			document.write(x);
+		</script>	
+		<h2>比较日期</h2>	
+		<script type="text/javascript">
+			var myDate = new Date();
+			myDate.setFullYear(2016,3,8)
+
+			var tbody = new Date();
+			if (myDate > tbody){
+				document.write("昨天时间：" + Date() )
+				//alert('这是以前的时间')
+			}else {
+				document.write("今天时间：" + Date() )
+				// alert('这是今天的时间')
+			}
+		</script>	
+		<h2>创建数组</h2>
+		<script type="text/javascript">
+			var mycars = new Array(3);
+				mycars[0] = "one"; 
+				mycars[1] = "two";
+				mycars[2] = "three";
+				mycars[3] = "four";
+			// for ( i = 0; i < mycars.length; i++){
+			// 	document.write(mycars[i] + "<br/>")
+			// }
+			for (var i = 0, len = array.length; i < len; i++){
+				document.write(mycars[i] + "<br/>")
+			}
+			// for(var i = Array.length - 1; i >= 0; i--){
+			// 	document.write(mycars[i] + "<br/>")
+			// }
+		</script>	
+		<h3>For...In 声明</h3>
+		<script type="text/javascript">
+			var mycars = new Array();
+				mycars[0] = "one"; 
+				mycars[1] = "two";
+				mycars[2] = "three";
+				mycars[3] = "four";
+			var x
+			for ( x in mycars ){
+				document.write(mycars[x] + "<br/>")
+			}
+		</script>			
 	</body>
 </html>
  
