@@ -77,6 +77,65 @@
 				document.write(mycars[x] + "<br/>")
 			}
 		</script>			
+		<h2>合并两个数组 - concat()</h2>
+		<script type="text/javascript">
+			var arr = new Array(3);
+				arr[0] = "1111";
+				arr[1] = "2222";
+				arr[2] = "3333";
+				arr[3] = "4444";
+
+			var arr2 = new Array(2);
+			 	arr2 [0]= "5555";
+			 	arr2 [1]= "6666";
+			document.write(arr.concat(arr2));
+		</script>
+		<h2>用数组的元素组成字符串 - join()</h2>
+		<script type="text/javascript">
+			var arr = new Array(3);
+				arr[0] = "1111";
+				arr[1] = "2222";
+				arr[2] = "3333";
+				arr[3] = "4444";
+			document.write(arr.join(" * "));
+		</script>
+		<h2>创建 Boolean 对象</h2>
+		<script type="text/javascript">
+			var myBoolean =new Array(5);
+			 	myBoolean[0] =  Boolean('true');
+				myBoolean[1] = Boolean("");
+				myBoolean[2] =  Boolean(0);
+				myBoolean[3] =  Boolean(false);
+				myBoolean[4] =  Boolean(NaN);
+			document.write( myBoolean + "<br/>");
+			
+			var myBoolean =new Array(5);
+				myBoolean[0] =  Boolean(1);
+				myBoolean[1] = Boolean(true);
+				myBoolean[2] =  Boolean("true");
+				myBoolean[3] =  Boolean("Bill Gates");
+			document.write( myBoolean + "<br/>");
+			
+		</script>
+		<h2>round() 方法可把一个数字舍入为最接近的整数。</h2>
+		<script type="text/javascript">
+			document.write(Math.round(0.5) + "<br/>")
+			document.write(Math.round(-0.5) + "<br/>")
+			document.write(Math.round(4.2) + "<br/>")
+			document.write(Math.round(-0.9) + "<br/>")
+		</script>
+		<h2>random() 来返回 0 到 1 之间的随机数。</h2>
+		<script type="text/javascript">
+			document.write(Math.random() + "<br/>");
+			document.write(Math.random() + "<br/>");
+		</script>
+		<h2>max()</h2>
+		<script type="text/javascript">
+			document.write(Math.max(7,9) + "<br/>");
+			document.write(Math.min(7,9) + "<br/><br/><br/><br/>");
+			
+			document.write(Math.floor(Math.random()*11)) 
+		</script>
 	</body>
 </html>
  
