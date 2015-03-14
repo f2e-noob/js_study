@@ -14,27 +14,23 @@
 		<script type="text/javascript">
 			function startTime()
 			{
-			var today=new Date()
-			var h=today.getHours()
-			var m=today.getMinutes()
-			var s=today.getSeconds()
-			// add a zero in front of numbers<10
-			m=checkTime(m)
-			s=checkTime(s)
-			document.getElementById('txt').innerHTML=h+":"+m+":"+s
-			t=setTimeout('startTime()',500)
-			}
-
-			function checkTime(i)
-			{
-			if (i<10) 
-			  {i="0" + i}
-			  return i
+				var tbody = new Date();
+				var h = tbody.getHours();
+				var m = tbody.getMinutes();
+				var s = tbody.getSeconds();
+				document.getElementById("txt").innerHTML = h + ':' + m + ":" + s;
+				t = setTimeout ('startTime()',500) //setTimeout() 方法用于在指定的毫秒数后调用函数或计算表达式。
 			}
 		</script>
 		<div class="" >
 			<div id="txt"></div>
 		</div>
+		<h2>操作日期</h2>
+		<script type="text/javascript">
+			var mydate = new Date();
+			//mydate.setFullYear(2015,7)
+			document.write('导出时间：' + mydate.getTime() + "毫秒")
+		</script>						
 	</body>
 </html>
  
