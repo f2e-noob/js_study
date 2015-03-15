@@ -182,3 +182,29 @@ true
         var w = window.innerWidth || document.documentElement.clientWidth || document.body.clienWidth;
 
             document.getElementById("demo").innerHTML = '浏览器窗口宽度大小' + w 
+
+## Uncaught TypeError: Property 'value' of object #<HTMLInputElement> is not a function 
+
+     未捕获的列表属性的值对象#＜htmlinputelement >不是一个函数
+
+false
+
+        <script type="text/javascript">
+            function timedMsg(t1,t2,t3,t4){
+                t1 = setTimeout("document.getElementById('txt').value('2秒')",2000);
+                t2 = setTimeout("document.getElementById('txt').value('4秒')",4000);
+                t3 = setTimeout("document.getElementById('txt').value('6秒')",6000);
+                t4 = setTimeout("document.getElementById('txt').value('8秒')",8000);
+            }
+        </script>
+
+true 
+
+        <script type="text/javascript">
+            function timedMsg(t1,t2,t3,t4){
+                t1 = setTimeout("document.getElementById('txt').value='2秒'",2000);
+                t2 = setTimeout("document.getElementById('txt').value='4秒'",4000);
+                t3 = setTimeout("document.getElementById('txt').value='6秒'",6000);
+                t4 = setTimeout("document.getElementById('txt').value='8秒'",8000);
+            }
+        </script>

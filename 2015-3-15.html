@@ -151,6 +151,40 @@
 				}
 			}
 		</script>
+		<h1>JavaScript 计时</h1>
+		<h2>setTimeout 延时时间</h2>
+		<button class="btn-primary btn" onclick="Settimeout()">setTimeout按钮</button>
+		<script type="text/javascript">
+			function Settimeout(t){
+				t = setTimeout("alert('1秒')",1000)
+			}
+		</script>
+		<div class="form-inline" style="margin-top:13px;">
+			<button class="btn btn-info" onclick="timedMsg()">setTimeout按钮</button>&nbsp;&nbsp;
+			<input type="text" class="form-control" style="width:250px;" id="txt">
+		</div>
+		<p>点击上面的按钮。输入框会显示出已经逝去的时间(2、4、6 、8秒)</p>
+		<script type="text/javascript">
+			function timedMsg(t1,t2,t3,t4){
+				t1 = setTimeout("document.getElementById('txt').value='2秒'",2000);
+				t2 = setTimeout("document.getElementById('txt').value='4秒'",4000);
+				t3 = setTimeout("document.getElementById('txt').value='6秒'",6000);
+				t4 = setTimeout("document.getElementById('txt').value='8秒'",8000);
+			}
+		</script>
+		<div class="form-inline" style="margin-top:13px;">
+			<button class="btn btn-success" onclick="timedCount()">开始计时</button>
+			<input type="text" class="form-control" style="width:250px;" id="txt2">
+		</div>
+		<script type="text/javascript">
+			var c=0
+			function timedCount(t)
+			{
+				document.getElementById('txt2').value=c
+				c=c+1
+				t = setTimeout("timedCount()",1000)
+			}
+		</script>
 	</body>	
 </html>
  
