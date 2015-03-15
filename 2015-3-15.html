@@ -44,6 +44,22 @@
 			patt1.compile("d");
 			document.write(patt1.test('china is blue'));
 		</script>
+		<h2>Window 对象</h2>
+		<p>全局变量是 window 对象的属性。
+全局函数是 window 对象的方法。</p>
+		<script type="text/javascript">
+			window.document.getElementById("header");
+			document.getElementById("header");
+		</script>
+		<h2>Window 尺寸</h2>
+		<p id="demo"></p>
+		<script type="text/javascript">
+			var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+			
+			var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+			document.getElementById("demo").innerHTML = '浏览器窗口宽度大小' + w + " 高度 " + h
+
+		</script>
 	</body>
 </html>
  

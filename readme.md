@@ -165,3 +165,20 @@ true
             var x = document.getElementById('div1');
             x.appendChild(para);
         </script>
+
+2015-3-15
+##  Uncaught TypeError: Property 'innerWidth' of object [object global] is not a function 
+        
+        未捕获的列表的属性对象[对象] innerwidth全球不是一个函数
+
+false 
+
+             var w = window.innerWidth()  || document.documentElement.clientWidth || document.body.clienWidth;
+
+            document.getElementById("demo").innerHTML = '浏览器窗口宽度大小' + w
+
+true 
+        
+        var w = window.innerWidth || document.documentElement.clientWidth || document.body.clienWidth;
+
+            document.getElementById("demo").innerHTML = '浏览器窗口宽度大小' + w 
