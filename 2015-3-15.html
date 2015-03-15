@@ -11,7 +11,39 @@
 		</style>
 	</head>
 	<body>
-	 
+		<h2>定义 RegExp</h2>
+		<script type="text/javascript">
+			var patt1 = new RegExp('e');
+		</script>
+		<h2>RegExp 对象的方法有三种 test() / exec() / compile()</h2>
+		<h3>test() 方法检索字符串中的指定值。返回值是 true 或 false。</h3>
+		<script type="text/javascript">
+			var patt1 = new RegExp('e');
+			document.write(patt1.test("this is blue ... ") + "<br/>");
+			document.write(patt1.test("this is door... "));
+		</script>
+		<h3>exec() 方法检索字符串中的指定值返回值是被找到的值。如果没有发现匹配，则返回 null。</h3>
+		<script type="text/javascript">
+			var patt1 = new RegExp("a");
+			document.write(patt1.exec('my name is door'));
+		</script>
+		<h3> RegExp 对象添加第二个参数，以设定检索。例如，如果需要找到所有某个字符的所有存在，则可以使用 "g" 参数 ("global")。</h3>
+		<script type="text/javascript">
+			var patt = new RegExp('e','g')
+			do{
+				result = patt.exec("my name is bule");
+				document.write(result);
+			}
+			while (result != null);
+		</script>
+		<h2>compile()compile() 方法用于改变 RegExp。compile() 既可以改变检索模式，也可以添加或删除第二个参数。</h2>
+		<script type="text/javascript">
+			var patt1 = new RegExp("e")
+			document.write(patt1.test('china is blue') + "<br/>");
+
+			patt1.compile("d");
+			document.write(patt1.test('china is blue'));
+		</script>
 	</body>
 </html>
  
