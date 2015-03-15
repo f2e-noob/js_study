@@ -38,3 +38,10 @@ img{
 	padding-top:50px;
 	cursor: pointer;
 }
+
+.areabox {
+	width:1000px; 
+	height:200px;
+	overflow-y:hidden;
+	border:1px solid #ccc;
+}
