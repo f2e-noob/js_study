@@ -118,6 +118,39 @@
 			txt+= "<p>User-agent language: " + navigator.systemLanguage + "</p>";
 			document.getElementById("example").innerHTML=txt;
 		</script>
+		<h2>JavaScript 中创建三种消息框：警告框、确认框、提示框。</h2>
+		<button class="btn btn-warning" onclick="Alert()">alert弹出框</button>
+		<script type="text/javascript">
+			function Alert(){
+				alert('消息弹出来！' + "\n" + "折行的消息文字！")
+			}
+		</script>
+		<h2>confirm() 确认框 </h2>
+		<p>方法用于显示一个带有指定消息和OK 及取消按钮的对话框。
+如果用户点击确定按钮，则confirm() 返回true。如果点击取消按钮，则confirm() 返回false。
+在用户点击确定按钮或取消按钮把对话框关闭之前，它将阻止用户对浏览器的所有输入。在调用confirm() 时，将暂停对JavaScript 代码的执行，在用户作出响应之前，不会执行下一条语句。</p>
+		<button class="btn btn-success" onclick="Confirm()">confirm按钮</button>
+		<script type="text/javascript">
+			function Confirm(){
+				var r = confirm("press the button")
+				if (r == true){
+					alert('this is true');
+				}else{
+					alert('this is false');
+				}
+			}
+		</script>
+		<h2>prompt 提示框</h2>
+		<button class="btn btn-danger" onclick="Prompt()">prompt按钮</button>
+		<script type="text/javascript">
+			function Prompt(){
+				var name = prompt("请输入想要的用户名~~~","默认值")
+				if(name!=null&&name!="")
+				{
+					alert(' 你好 ' + name + " 欢迎您的登录 ")
+				}
+			}
+		</script>
 	</body>	
 </html>
  
