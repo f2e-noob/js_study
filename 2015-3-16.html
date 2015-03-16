@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<style type="text/css">
+		 	p{
+		 		line-height: 30px;
+		 	}
+		</style>
+	</head>
+	<body>
+		<div class="form-inline" style="margin-top:13px;">
+			<button class="btn btn-success" onclick="timedCount()">开始计时</button>
+			<input type="text" class="form-control" style="width:250px;" id="txt2">
+		</div>
+		<script type="text/javascript">
+			var c=0
+			function timedCount(t)
+			{
+				document.getElementById('txt2').value=c
+				c=c+1
+				t = setTimeout("timedCount()",1000)
+			}
+		</script>
+	</body>	
+</html>
+ 
