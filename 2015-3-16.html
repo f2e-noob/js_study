@@ -212,6 +212,78 @@
 		</script>
 		<h2>JavaScript 库</h2>
 		<p> JavaScript 框架： jQuery、Prototype、MooTools。</p>
+		<h4>jQuery</h4>
+		<p>jQuery 是目前最受欢迎的 JavaScript 框架。它使用 CSS 选择器来访问和操作网页上的 HTML 元素（DOM 对象）。jQuery 同时提供 companion UI（用户界面）和插件。</p>
+		<hr/>
+		<h4>Prototype</h4>
+		<p>Prototype 是一种库，提供用于执行常见 web 任务的简单 API。
+API 是应用程序编程接口（Application Programming Interface）的缩写。它是包含属性和方法的库，用于操作 HTML DOM。
+Prototype 通过提供类和继承，实现了对 JavaScript 的增强。</p>
+		<hr/>
+		<h4>MooTools</h4>
+		<p>MooTools 也是一个框架，提供了可使常见的 JavaScript 编程更为简单的 API。
+MooTools 也含有一些轻量级的效果和动画函数。</p>
+		<h2> 框架库 - jQuery</h2>
+		<script type="text/javascript">
+			function myFunction()
+			{
+				var obj=document.getElementById("h01");
+				obj.innerHTML="Hello jQuery";
+			}
+			onload=myFunction;
+		</script>
+		<p id="h01"></p>
+		<p>//方法二 onclick="myFunction()" 删除javascript里面的onload=myFuction;
+			<button class="btn btn-success">按钮</button> 
+		</p>
+		<script type="text/javascript">
+			function myFunction()
+			{
+				$("#h02").html("Hello jQuery");
+			}
+			$(document).ready(myFunction);
+		</script>
+		<p id="h02"></p>
+		<h2>Prototype 描述</h2>
+		<p>Prototype 提供的函数可使 HTML DOM 编程更容易。与 jQuery 类似，Prototype 也有自己的 $() 函数。
+$() 函数接受 HTML DOM 元素的 id 值（或 DOM 元素），并会向 DOM 对象添加新的功能。
+与 jQuery 不同，Prototype 没有用以取代 window.onload() 的 ready() 方法。相反，Prototype 会向浏览器及 HTML DOM 添加扩展。</p>
+		<script type="text/javascript">
+			function myFunction(){
+				document.getElementById('Prototype').innerHTML = 'hello word';
+			}
+			onload=myFunction;
+		</script>
+		<p id="Prototype"></p>
+
+		<script type="text/javascript">
+			function myFunction3(){
+				$('Prototype2').insert("hello word");
+			}
+			Event.observe(window,"load",myFunction3);
+		</script>
+		<p id="Prototype2"></p>
+
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script>
+		function myFunction()
+			{
+			$("h001").insert("Hello Prototype!");
+			}
+			Event.observe(window,"load",myFunction);
+		</script>
+		<P id="h001"></P>
+
+		<h1>JS 实例</h1>
+		<h2>基础 JavaScript 实例</h2>
+		<p>
+			生成文本 //document.write('hello');<br/>
+			生成普通文本和标签///document.write('<h5>hello</h5>');<br/>
+			head 部分 // <head>脚本</head><br/>
+			body 部分 //<body onload="value()">加载！</body><br/>
+			外部 JavaScript //  script<br/>
+		</p>
+		<h2>JavaScript 语句、注释和代码块</h2>
 	</body>	
 </html>
  
