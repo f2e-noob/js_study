@@ -11,7 +11,7 @@
 		 	}
 		</style>
 	</head>
-	<body>
+	<body onload="startTime()">
 		<h2>JavaScript 计时事件 setTimeout带有停止按钮的无穷循环中的计时事件</h2>
 		<div class="form-inline" style="margin-top:13px;">
 			<button class="btn btn-success" onclick="timedCount()">开始计时</button>
@@ -27,7 +27,7 @@
 			}
 		</script>
 
-		<table class="table table-bordered table-striped">
+		<table class="table table-bordered table-striped" style="margin-top:15px">
 			<thead>
 				<tr>
 					<th class="text-center" width="50px;">
@@ -112,9 +112,6 @@
 				$("#id-checkbox-all").click(function(){
 			      $("input[name='chk']").prop("checked", $("#id-checkbox-all").prop("checked"));
 			    });
-			    $("input[type='checkbox']").prop("checked", function( i, val ) {
-				  return !val;
-				}
 			})
 		</script>
 		<p>使用window.location.replace() or window.location.href(), 来重新加载此页面不出现提示框</p>
@@ -128,6 +125,51 @@
 			 aaa.location.reload(); //弹出窗口刷新父窗口
 			}   
 		</script>
+		<p>val(function(index, value))</p>
+		<p>设置每一个匹配元素的值。function(index, value)Function此函数返回一个要设置的值。接受两个参数，index为元素在集合中的索引位置，text为原先的text值。
+		</p>
+		<input type="text" class="item form-control" style="width:200px;">
+		<script type="text/javascript">
+			$(function(){
+				$('input:text.item').val(function(){
+					return this.value + '输入姓名：' + this.className;
+				})
+			})
+		</script>
+		<h2>JavaScript 计时事件 setTimeout带有停止按钮的无穷循环中的计时事件并且有停止的事件</h2>
+		<div class="form-inline" style="margin-top:13px;">
+			<button class="btn btn-warning" onclick="timedCount2()">开始计时</button>
+			<input type="text" class="form-control" style="width:250px;" id="txt3">
+			<button class="btn btn-danger" onclick="stopCount()">停止计时</button>
+		</div>
+		<script type="text/javascript">
+			var c=0
+			function timedCount2(t)
+			{
+				document.getElementById('txt3').value=c
+				c=c+1
+				t = setTimeout("timedCount2()",1000)
+			}
+			function stopCount(t)
+			{
+				c=0;
+				setTimeout("document.getElementById('txt3').value=0",0)
+				clearTimeout(t);
+			}
+		</script>
+		<h2>使用计时事件制作的钟表</h2>
+		<script type="text/javascript">
+			function startTime()
+			{
+				var today = new Date();
+					h = today.getHours();
+					m = today.getMinutes();
+					s = today.getSeconds();
+				document.getElementById('txt').innerHTML=h+":"+m+":"+s
+				t=setTimeout('startTime()',1000)
+			}
+		</script>
+		<div id="txt"></div>
 	</body>	
 </html>
  
