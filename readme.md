@@ -208,3 +208,33 @@ true
                 t4 = setTimeout("document.getElementById('txt').value='8秒'",8000);
             }
         </script>
+
+2015-3-17
+         $('#personalc').on('show.bs.modal', function (e) {
+            // modal 弹出事件方法调用
+                $.get('/admin/account/one?_id={{ handler.uid}}',function(data){ // 通过/admin/account/one?_id={{ handler.uid}}这个接口获取用户信息data；
+                    data = data.data;
+                    $('#profile-form').find("input[name='email']").val(data.email); 
+                    // jquery 通过input元素属性查找input; 
+                    // 通过val方法给input赋值；
+                    // 访问对象属性 data.email
+
+                    $('#profile-form').find("input[name='nickname']").val(data.nickname); //
+                    $('#profile-form').find("input[name='mobile']").val(data.mobile);
+                })
+           }) 
+           
+           $('#modify').click(function(){
+               var data = data.data;
+              $('#profile-form').find("input[name='email']").attr("value", '/admin/account/one?_id='+ data.email)
+              console.log(data);
+              // $('#profile-form').find("input[name='nickname']").attr("value", '/admin/account/one?_id='+ data.nickname)
+              // $('#profile-form').find("input[name='mobile']").attr("value", '/admin/account/one?_id='+ data.mobile)
+              // $.post('/admin/account/one?_id'+_id, function(data){
+              //    data = data.data; 
+              //    if(data.status){
+              //       location.reload();
+              //     }
+              //   });  
+           }) 
+        })
