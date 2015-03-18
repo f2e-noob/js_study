@@ -97,6 +97,32 @@
 				</tr>
 			</tbody>
 		</table>
+		<h2>JavaScript 条件语句 If ... Else</h2>
+		<script type="text/javascript">
+			var r=Math.random();
+			if(r>0.5){
+				document.write("<a href='baidu.com' style='font-size:15px;font-weight:bold;'>请点击百度网址</a>")
+			}else{
+				document.write("<a href='vip.com' style='font-size:15px; font-weight:bold;'>进入唯品会</a>")
+			}
+		</script>
+		<h2>提示框</h2>
+		<button class="btn btn-primary" onclick="onshowTip()">点击提示</button>
+		<script type="text/javascript">
+			function onshowTip(){
+				var name = prompt('用户名','赵潇潇')
+				if(name != '' && name !='num'){
+					document.write('你好！'+ name + '欢迎登录')
+				}
+			}
+		</script>
+		<h2>带有参数的函数</h2>
+		<button class="btn btn-success" onclick="myfunction('您好!')">点击按妞</button>
+		<script type="text/javascript">
+			function myfunction(txt){
+				alert(txt)
+			}
+		</script>
 	</body>	
 </html>
  
