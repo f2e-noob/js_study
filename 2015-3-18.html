@@ -123,6 +123,89 @@
 				alert(txt)
 			}
 		</script>
+		<script type="text/javascript">
+			function backFunction(){
+				return('您好! 欢迎再次访问...')
+			}
+		</script>
+		<h2>返回值的函数</h2>
+		<script type="text/javascript">
+			document.write(backFunction())
+		</script>
+
+		<script type="text/javascript">
+			function backFunction(a,b){
+				return a*b
+			}
+		</script>
+		<h2>带有参数的返回值的函数</h2>
+		<script type="text/javascript">
+			document.write(backFunction(5,5))
+		</script>
+		<h2>For 循环</h2>
+	
+		<p id="txt"></p>
+		<button class="btn btn-danger" onclick="mynumber()">点击按钮</button>
+		<script type="text/javascript">
+			function mynumber(){
+				var t = ""
+				for(var i=0; i < 5 ; i++){
+					t = t + "this is number " + i + "<br/>"
+					document.getElementById("txt").innerHTML= t;
+				}
+			}
+		</script>
+		<script type="text/javascript">
+				for(var i=0; i < 5 ; i++){
+					document.write(i+"<br/>")
+				}
+		</script>
+				
+		<h2>while 循环</h2>
+		<script type="text/javascript">
+			i=0;
+			while(i<=5){
+				document.write("数字"+i+"<br/>")
+				i++;
+			}
+		</script>
+		<h2>do while 循环</h2>
+		<script type="text/javascript">
+			var i=0;
+			do{
+				document.write('数字是：'+ i + "<br/>");
+				i++
+			}
+			while(i<=5)
+		</script>
+		<h2>break</h2>
+		<script type="text/javascript">
+			for(var i=0; i<10; i++){
+				if(i==3){break}
+				document.write(i+"<br/>");
+			}
+		</script>
+		<h2>continue</h2>
+		<script type="text/javascript">
+			for (var i = 0 ; i<=10; i++){
+				if(i==5){continue}
+				document.write(i+"<br/>")
+			}
+		</script>
+		<h2>使用 For...In 声明来遍历数组内的元素</h2>
+		<script type="text/javascript">
+			var x ="";
+			var cars = new Array();
+				cars [0] = "宝马";
+				cars [1] = "奥迪";
+				cars [2] = "名图";
+				cars [3] = "大众";
+			for(x in cars){
+				document.write(cars[x] + "<br/>")
+			}
+		</script>
+		<h1>JavaScript 错误处理</h1>
+		<h2>try...catch 语句</h2>
 	</body>	
 </html>
  
