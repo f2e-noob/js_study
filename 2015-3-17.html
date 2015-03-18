@@ -36,16 +36,6 @@
                   $('#profile-form').find("input[name='mobile']").val(data.mobile);
               })
          }) 
-         
-         $('#modify').click(function(){
-           $.get('/admin/account/modify?_id={{ handler.uid}}', function(data){
-                $('#profile-form').find("input[name='email']").attr("value", data.email)
-                $('#profile-form').find("input[name='nickname']").attr("value", data.nickname)
-                $('#profile-form').find("input[name='mobile']").attr("value", data.mobile)
-                $('#profile-form').modal("show");
-            });
-         }); 
-
 		</script>
 		<ul id="list">   
 		   <li><label><input type="checkbox" value="1"> 1.时间都去哪儿了</label></li> 
