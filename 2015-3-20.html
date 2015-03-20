@@ -71,6 +71,45 @@
 				adddlert("Welcome guest!")
 			}
 		</script>
+		<h1>高级 JavaScript 实例</h1>
+		<h2>检测浏览器及版本</h2>
+		<script type="text/javascript">
+			var browser = navigator.appName;
+			var b_version = navigator.appVersion;
+			var version = parseFloat(b_version);
+			document.write(browser + "<br/>");
+			document.write(version + "<br/>");
+		</script>
+		<h2>检测浏览器的更多信息</h2>
+		<script type="text/javascript">
+			document.write( navigator.platform + "<br/>"); // 检查浏览器平台信息
+			document.write(navigator.appName + "<br/>");	// 检查浏览器名称			
+			document.write(navigator.appVersion + "<br/>");  // 检查浏览器版本
+			document.write(navigator.systemLanguage + "<br/>")  // 检查浏览器语言信息
+		</script>
+		<h2>根据浏览器类型提醒用户</h2>
+		<script type="text/javascript">
+			var browser = navigator.appName;
+			var b_version = navigator.appVersion;
+			var version = parseFloat(b_version);
+			if((browser=="Netscape" || browser == "Microsoft Internet Explorer")&& (version>=4)){
+				alert('您的浏览器已经为最新的了')
+			}else{
+				请及时升级浏览器
+			}
+		</script>
+		<h2>javascript图像映射</h2>
+		<img src="images/eg_planets.jpg" usemap="planetmap">
+		<map>
+			<area shape="circle" coords="190,130,10" name='planetmap' id="planetmap" href="http://www.baidu.com" onmouseover="直到 20 世纪 60 年代，金星一直被认为是地球的孪生姐妹，因为金星是离我们最近的行星，同时还由于两者拥有很多共同的特征。">
+			<area shape="circle" coords="170,145,6" name='planetmap' id="planetmap" href="http://www.sohu.com" onmouseover="从地球上是很难研究水星的，这是由于它和太阳的距离总是很近。">
+			<area shape="rect" coords="0,0,160,260" name='planetmap' id="planetmap" href="http://www.f2e-noob.com" onmouseover="太阳和类似木星这样的气态行星是到目前为止太阳系中最大的物体。">
+		</map>
+		<script type="text/javascript">
+			function onmouserover(){
+
+			}
+		</script>
 	</body>	
 </html>
  
