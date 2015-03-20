@@ -12,7 +12,7 @@
 		</style>
 	</head>
 	<body>
-		<h1>JavaScript 错误处理</h1>
+<!-- 		<h1>JavaScript 错误处理</h1>
 		<h2>try...catch 语句</h2>
 		<button class="btn btn-success" onclick="tryCatch()">点击按妞</button>
 		<script type="text/javascript">
@@ -110,6 +110,29 @@
 			function writeText(text){
 				document.getElementById('txt').innerHTML=text;
 			}
+		</script>
+		<h2>简单的计时</h2>
+		<button class="btn btn-success" onclick="aa()">点击按钮</button>
+		<script type="text/javascript">
+			function aa(t){
+				t = setTimeout("alert('1 秒')",1000)
+			}
+		</script> -->
+		<h2>另一个简单的计时</h2>
+		<div class="form-inline">
+			<input class="form-control" style="width:240px;" id="txt" value="xxx">
+			<button class="btn btn-primary" onclick="timedText()">点击按钮</button>
+		</div>
+		<script type="text/javascript">
+			function timedText(){
+				alert("xxx")
+				var t1 = setTimeout("document.getElementById('txt').value='2秒'",2000);
+				var t2 = setTimeout("document.getElementById('txt').value='4秒'",4000);
+				var t3 = setTimeout("document.getElementById('txt').value='6秒'",6000);
+			}
+		</script>
+
+
 		</script>
 	</body>	
 </html>
