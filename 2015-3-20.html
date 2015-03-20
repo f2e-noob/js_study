@@ -100,14 +100,15 @@
 		</script>
 		<h2>javascript图像映射</h2>
 		<img src="images/eg_planets.jpg" usemap="planetmap">
-		<map>
-			<area shape="circle" coords="190,130,10" name='planetmap' id="planetmap" href="http://www.baidu.com" onmouseover="直到 20 世纪 60 年代，金星一直被认为是地球的孪生姐妹，因为金星是离我们最近的行星，同时还由于两者拥有很多共同的特征。">
-			<area shape="circle" coords="170,145,6" name='planetmap' id="planetmap" href="http://www.sohu.com" onmouseover="从地球上是很难研究水星的，这是由于它和太阳的距离总是很近。">
-			<area shape="rect" coords="0,0,160,260" name='planetmap' id="planetmap" href="http://www.f2e-noob.com" onmouseover="太阳和类似木星这样的气态行星是到目前为止太阳系中最大的物体。">
+		<p id="txt" style="height:30px;"></p>
+		<map name='planetmap' id="planetmap">
+			<area shape="circle" coords="190,130,10"  href="http://www.baidu.com" onMouseOver="writeText('直到 20 世纪 60 年代，金星一直被认为是地球的孪生姐妹，因为金星是离我们最近的行星，同时还由于两者拥有很多共同的特征。')"/>
+			<area shape="circle" coords="170,145,6" href="http://www.sohu.com" onmouseover="writeText('从地球上是很难研究水星的，这是由于它和太阳的距离总是很近。')"/>
+			<area shape="rect" coords="0,0,160,260" href="http://www.f2e-noob.com" onmouseover="writeText('太阳和类似木星这样的气态行星是到目前为止太阳系中最大的物体。')"/>
 		</map>
 		<script type="text/javascript">
-			function onmouserover(){
-
+			function writeText(text){
+				document.getElementById('txt').innerHTML=text;
 			}
 		</script>
 	</body>	
