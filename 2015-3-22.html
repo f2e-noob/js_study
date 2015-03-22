@@ -11,7 +11,7 @@
 		 	}
 		</style>
 	</head>
-	<body>
+	<body onload="startTime()">
  		<h1>在一个无穷循环中的计时事件</h1>
 		<div class="form-inline"> 
 			<input id="txt" type="text" class="form-control"> 
@@ -48,12 +48,17 @@
 		</div>
 		<h2>使用计时事件制作的钟表</h2>
 		<script type="text/javascript">
-			var today = new Data();
+			function startTime()
+			{
+				var today = new Date();
 			 	h = today.getHours();
 				m = today.getMinutes(); 
 				s = today.getSeconds();
-			document.write("当前北京时间：" + h + " : " + m + " " : " + s)
+				document.getElementById('txt3').innerHTML=h+":"+m+":"+s
+				setTimeout('startTime()',500)
+			} 
 		</script>
+		<div id="txt3"></div>
 	</body>	
 </html>
  
