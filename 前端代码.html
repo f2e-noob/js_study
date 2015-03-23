@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<script src="js/validform.min.js" type="text/javascript"></script>
+	</head>
+	<body>
+		 <div class="well" style="padding:10px;">
+		 	<button class="btn btn-success" data-toggle="modal" data-target="#modal-device" id="addNumber"><i class="fa fa-pencil-square-o" ></i> 添加</button>
+		 	<button class="btn btn-danger" id="delteNumber"><i class="fa fa-trash"></i> 删除</button>
+		 </div>
+		 <table class="table table-hover">
+		 	<thead>
+		 		<tr>
+		 			<th width="50">
+		 				<label>
+		 					<input type="checkbox" class="ace" id="id-checkbox-all">		 
+		 					<span class="lbl"></span>
+		 				</label>
+		 			</th>
+		 			<th>姓名</th>
+		 			<th>性别</th>
+		 			<th>年龄</th>
+		 			<th class="text-center">操作</th>
+		 		</tr>
+		 	</thead>
+		 	<tbody>
+		 		<tr>
+		 			<th>
+		 				<label>
+		 					<input type="checkbox" class="ace" name="chk">		 
+		 					<span class="lbl"></span>
+		 				</label>
+		 			</th>
+		 			<th>欧阳正华</th>
+		 			<th>男</th>
+		 			<th>35</th>
+		 			<th class="text-center">
+		 				<a class="class-device-modify"> <i class="fa fa-pencil-square-o text-warning"></i>
+		 				</a>
+		 				&nbsp;&nbsp;&nbsp;
+		 				<a class="class-device-del"> <i class="fa fa-trash-o text-danger"></i>
+		 				</a>
+		 			</th>
+
+		 		</tr>
+		 		<tr>
+		 			<th>
+		 				<label>
+		 					<input type="checkbox" class="ace" name="chk">		 
+		 					<span class="lbl"></span>
+		 				</label>
+		 			</th>
+		 			<th>刘亦菲</th>
+		 			<th>女</th>
+		 			<th>38</th>
+		 			<th class="text-center">
+		 				<a class="class-device-modify">
+		 					<i class="fa fa-pencil-square-o text-warning"></i>
+		 				</a>
+		 				&nbsp;&nbsp;&nbsp;
+		 				<a class="class-device-del">
+		 					<i class="fa fa-trash-o text-danger"></i>
+		 				</a>
+		 			</th>
+
+		 		</tr>
+		 		<tr>
+		 			<th>
+		 				<label>
+		 					<input type="checkbox" class="ace" name="chk">		 
+		 					<span class="lbl"></span>
+		 				</label>
+		 			</th>
+		 			<th>欧阳正华</th>
+		 			<th>男</th>
+		 			<th>35</th>
+		 			<th class="text-center">
+		 				<a class="class-device-modify">
+		 					<i class="fa fa-pencil-square-o text-warning"></i>
+		 				</a>
+		 				&nbsp;&nbsp;&nbsp;
+		 				<a class="class-device-del">
+		 					<i class="fa fa-trash-o text-danger"></i>
+		 				</a>
+		 			</th>
+
+		 		</tr>
+		 	</tbody>
+		 </table>
+		<div class="modal fade" id="modal-device" tabindex="-1" role="dialog">
+			<form class="form-horizontal" method="post" action="">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">添加字段</h4>
+							<input type="hidden" name='_id' value=""/>		  
+						</div>
+						<div class="modal-body">
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">姓名：</label>
+									<div class="col-sm-10">
+										<input type="text" name="name" class="form-control" placeholder="姓名" style="width:440px;" datatype="*" nullmsg="请输入姓名" errormsg="请输入正确姓名"></div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">性别：</label>
+									<div class="col-sm-10">
+										<input type="text" name="sex" class="form-control" placeholder="性别" style="width:440px;" datatype="*" nullmsg="请输入性别" errormsg="请输入正确性别"></div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">年龄：</label>
+									<div class="col-sm-10">
+										<input type="text" name="age" class="form-control" placeholder="年龄" style="width:440px;" datatype="*" nullmsg="请输入年龄" errormsg="请输入正确年龄"></div>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary">完成</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$("form").Validform({
+			      ajaxPost: true,
+			      callback: function(data){
+			        if(data.status) alert("设置成功");
+			      },
+			      tiptype:function(msg,o,cssctl){
+			          var objtip=o.obj.next('.Validform_checktip');
+			          if($(objtip).size()==0){
+			                  objtip = $('<label>').addClass('Validform_checktip');
+			                  o.obj.after(objtip)
+			          }
+			          if(!(o.type == 2)){
+			              if(!o.obj.is("form")){//验证表单元素时o.obj为该表单元素，全部验证通过提交表单时o.obj为该表单对象;
+			                  objtip.text(msg).show();
+			              }
+			          }else{
+			              o.obj.next('.Validform_checktip').hide();
+			          }
+			      }
+			    });
+
+				// 方法一
+				$("#id-checkbox-all").click(function(){
+					$("input=[name='chk']").prop("checked",$("#id-checkbox-all").prop("checked"))
+				})
+
+				// 方法二
+		        $("#id-checkbox-all").click(function(){    
+			        if(this.checked){
+			        	$(".table-hover :checkbox").attr("checkbox",true)
+			        }else{
+			        	$(".table-hover :checkbox").attr("checkbox",false)
+			        }
+			     });
+
+			    $('#addNumber').click(function(){
+			    	$('#modal-device').find("input[name='_id']").attr("value", "");
+			    	$('#modal-device').find("input[name='name']").attr("value", "");
+			    	$('#modal-device').find("input[name='sex']").attr("value", "");
+			    	$('#modal-device').find("input[name='age']").attr("value", "");
+			    	// $("#modal-device").modal("show");
+			    })
+
+			    $('.class-device-modify').click(function(){
+			    	var _tr = $(this).parents('tr');
+			    	$.get('服务器路径url'+_tr.attr("_id"),function(data){
+			    		data = data.data;
+			    		$('#modal-device').find("input[name='_id']").attr("value", data._id);
+				    	$('#modal-device').find("input[name='name']").attr("value", data.name);
+				    	$('#modal-device').find("input[name='sex']").attr("value", data.sex);
+				    	$('#modal-device').find("input[name='age']").attr("value", data.age);
+			    	})
+			    })
+
+			    $("#delteNumber").click(function(){
+			    	var chk = $("input[name='chk']:checked");
+			    	$.each(chk,function(i,val){
+			    		var _id = $(val).parents("tr"); 
+			    		 _id.remove();
+			    	})
+			    })
+						//.attr('_id'); $.get('服务器地址url'+ _id,funcation(data){
+			    			//if(data.status){
+			    				//location.reload();
+			    			//}
+			    		//})
+			    $(".class-device-del").click(function(){
+			    	var _tr = $(this).parents('tr')
+			    	var chk = $("input[name='chk']");
+			    	if(chk != checked){
+			    		_tr.remove();
+			    	}
+			    })
+			})
+		</script>
+	</body>
+</html>
+ 
