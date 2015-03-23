@@ -199,12 +199,15 @@
 			    				//location.reload();
 			    			//}
 			    		//})
-			    $(".class-device-del").click(function(){
-			    	var _tr = $(this).parents('tr')
-			    	var chk = $("input[name='chk']");
-			    	if(chk != checked){
-			    		_tr.remove();
-			    	}
+			    // $(".class-device-del").click(function(){
+			    // 	var chk = $("input[name='chk']:checked");
+			    // 	     _tr = $(this).parents("tr"); 
+			    // 	$.each(chk,function(){
+			    // 		_tr.remove();
+			    // 	})
+			    // })
+				$(".class-device-del").click(function(){
+			    	$(this).parents('tr').remove();
 			    })
 			})
 		</script>
