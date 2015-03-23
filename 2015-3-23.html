@@ -37,7 +37,14 @@
 		</script>
 		<h2>创建用于对象的模板</h2>
 		<script type="text/javascript">
-			
+			function personal(firstname,lastname,job,tel){
+				this.firstname=firstname;
+				this.lastname=lastname;
+				this.job=job;
+				this.tel=tel;
+			}
+			myfather =new personal("xia","qing","IT","123581")
+			document.write(myfather.firstname + "年龄是" + myfather.tel)
 		</script>
 	</body>	
 </html>
