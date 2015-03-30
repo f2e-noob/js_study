@@ -67,6 +67,26 @@
 			]
 			document.write(employees[0].name)
 		</script>
+		<h3>eval() 函数使用的是 JavaScript 编译器，可解析 JSON 文本</h3>
+		<p>
+			First Name:
+			<span id="fname"></span>
+			<br />		
+			Last Name:
+			<span id="lname"></span>
+			<br />		
+		</p>
+		<script type="text/javascript">
+		var txt = '{"employees":[' +
+			'{"firstName":"Bill","lastName":"Gates" },' +
+			'{"firstName":"George","lastName":"Bush" },' +
+			'{"firstName":"Thomas","lastName":"Carter" }]}';
+
+			var obj = eval ("(" + txt + ")");
+
+			document.getElementById("fname").innerHTML=obj.employees[1].firstName 
+			document.getElementById("lname").innerHTML=obj.employees[1].lastName 
+		</script>
 	</body>	                                                                                                                                                                        
 </html>
  
