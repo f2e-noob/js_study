@@ -87,6 +87,53 @@
 			document.getElementById("fname").innerHTML=obj.employees[1].firstName 
 			document.getElementById("lname").innerHTML=obj.employees[1].lastName 
 		</script>
+		<h2>Array 对象</h2>
+		<h3>Array 对象属性</h3>
+		<p><b>constructor</b> 返回对创建此对象的数组函数的引用</p>
+		 <script type="text/javascript">
+		 	var test = new Array();
+		 	if(test.constructor == Array){
+		 		document.write('this is Array')
+		 	}
+		 	if(test.constructor == Date){
+		 		document.write('this is Date')
+		 	}
+		 </script>
+		 <p><b>length</b>  设置或返回数组中的项目</p>
+		 <script type="text/javascript">
+		 	var word = "hello word";
+		 	document.write(word.length+ "<br/>");
+		 </script>
+		 <script type="text/javascript">
+		 	var arr = new Array(3);
+		 		arr[0] = "one";
+		 		arr[1] = "two";
+		 		arr[2] = "three";
+		 	document.write(arr.length + "<br/>");
+		 	document.write(arr[2].length + "<br/>");	
+		 </script>
+		 <p>prototype 属性使您有能力向对象添加属性和方法</p>
+		 <h3>Array 对象方法</h3>
+		 <p>concat()方法用于连接两个或多个数组。</p>
+		 <script type="text/javascript">
+		 	var arr = new Array(3);
+		 		arr[0] = "one";
+		 		arr[1] = "two";
+		 		arr[2] = "three";
+
+		 	var arr2 = new Array(1);
+		 		arr2[0] = "1111"
+		 	document.write(arr.concat(arr2));
+		 </script>
+		<p>join 把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔</p>
+		<script type="text/javascript">
+			var jo = new Array(4);
+				jo[0]= "1111";
+				jo[1]="222";
+			 	jo[2]="333";
+			 	jo[3]="4444"
+			document.write(jo.join("*"))
+		</script>
 	</body>	                                                                                                                                                                        
 </html>
  
