@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<style type="text/css">
+		 	p{
+		 		line-height: 30px;
+		 	}
+		</style>
+	</head>
+	<body>
+ 		<h1>JS 对象实例</h1> 
+ 		<h2>使用 round() 对数字进行舍入</h2>
+ 		<script type="text/javascript">
+ 			document.write(Math.round(0.45) + "<br/>")
+ 			document.write(Math.round(0.8) + "<br/>")
+ 			document.write(Math.round(-0.8) + "<br/>")
+ 		</script>
+ 		<h2>random()来返回0到1之间的随机数</h2>
+ 		<script>
+ 			document.write(Math.random())
+ 		</script>
+ 		<h2>使用 max() 来返回两个给定的数中的较大的数</h2>
+ 		<script type="text/javascript">
+ 			document.write(Math.max(5,10)+"<br/>");
+ 			document.write(Math.max(10,10.1)+"<br/>");
+ 			document.write(Math.max(-2,-10)+"<br/>");
+ 		</script>
+ 		<h2>使用 min() 来返回两个给定的数中的较大的数</h2>
+ 		<script type="text/javascript">
+ 			document.write(Math.min(5,10)+"<br/>");
+ 			document.write(Math.min(10,10.1)+"<br/>");
+ 			document.write(Math.min(-2,-10)+"<br/>");
+ 		</script>
+		
+		<h3>JSON 是存储和交换文本信息的语法。类似 XML。JSON 比 XML 更小、更快，更易解析.</h3>
+		<h2>在 JavaScript 中创建 JSON 对象</h2>
+		<h3>读取 JSON 字符串用 eval() 处理 JSON 字符串</h3>
+		<div id="json">
+			<p>name: <span id="name"></span></p>
+			<p>age: <span id="age"></span></p>
+			<p>job: <span id="job"></span></p>
+			<p>adress: <span id="adress"></span></p>
+			<script type="text/javascript">
+				var jsonobject={
+					"name":"json","age":"34","job":"IT","adress":"北京市 东城区"
+				}
+				function myJson(){
+					//document.write(jsonobject.name,jsonobject.age)
+					document.getElementById('name').innerHTML = jsonobject.name;
+				}
+			</script>
+			<button class="btn btn-success" onclick="myJson()">点击按钮</button>
+		</div>
+		<h2>JSON 使用 JavaScript 语法</h2>
+		<p id=json_list""></p>
+		<script type="text/javascript">
+			var employees = [
+				{"name":"one","name":"23","job":"IT"},         
+				{"age":"two","age":"29","job":"物流管理"}, 
+				{"adress":"three","adress":"26","job":"园林养护"} 
+			]
+			document.write(employees[0].name)
+		</script>
+		<h3>eval() 函数使用的是 JavaScript 编译器，可解析 JSON 文本</h3>
+		<p>
+			First Name:
+			<span id="fname"></span>
+			<br />		
+			Last Name:
+			<span id="lname"></span>
+			<br />		
+		</p>
+		<script type="text/javascript">
+		var txt = '{"employees":[' +
+			'{"firstName":"Bill","lastName":"Gates" },' +
+			'{"firstName":"George","lastName":"Bush" },' +
+			'{"firstName":"Thomas","lastName":"Carter" }]}';
+
+			var obj = eval ("(" + txt + ")");
+
+			document.getElementById("fname").innerHTML=obj.employees[1].firstName 
+			document.getElementById("lname").innerHTML=obj.employees[1].lastName 
+		</script>
+		<h2>Array 对象</h2>
+		<h3>Array 对象属性</h3>
+		<p><b>constructor</b> 返回对创建此对象的数组函数的引用</p>
+		 <script type="text/javascript">
+		 	var test = new Array();
+		 	if(test.constructor == Array){
+		 		document.write('this is Array')
+		 	}
+		 	if(test.constructor == Date){
+		 		document.write('this is Date')
+		 	}
+		 </script>
+		 <p><b>length</b>  设置或返回数组中的项目</p>
+		 <script type="text/javascript">
+		 	var word = "hello word";
+		 	document.write(word.length+ "<br/>");
+		 </script>
+		 <script type="text/javascript">
+		 	var arr = new Array(3);
+		 		arr[0] = "one";
+		 		arr[1] = "two";
+		 		arr[2] = "three";
+		 	document.write(arr.length + "<br/>");
+		 	document.write(arr[2].length + "<br/>");	
+		 </script>
+		 <p>prototype 属性使您有能力向对象添加属性和方法</p>
+		 <h3>Array 对象方法</h3>
+		 <p>concat()方法用于连接两个或多个数组。</p>
+		 <script type="text/javascript">
+		 	var arr = new Array(3);
+		 		arr[0] = "one";
+		 		arr[1] = "two";
+		 		arr[2] = "three";
+
+		 	var arr2 = new Array(1);
+		 		arr2[0] = "1111"
+		 	document.write(arr.concat(arr2));
+		 </script>
+		<p>join() 把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔</p>
+		<script type="text/javascript">
+			var jo = new Array(4);
+				jo[0]= "1111";
+				jo[1]= "222";
+			 	jo[2]= "333";
+			 	jo[3]= "4444"
+			document.write(jo.join("*"))
+		</script>
+		<p>pop() 删除数组的最后一个元素并且返回值 长度减1</p>
+		<script type="text/javascript">
+			var jo = new Array(4);
+				jo[0]= "1111";
+				jo[1]="222";
+			 	jo[2]="333";
+			 	jo[3]="4444";
+			document.write(jo.pop()+"<br/>");
+			document.write(jo+"<br/>");
+		</script>
+		<p>push() 向数组的结尾添加一个元素到数组中并返回新的长度</p>
+		<script type="text/javascript">
+			var jo = new Array(4);
+				jo[0]= "111";
+				jo[1]= "222";
+			 	jo[2]= "333";
+			 	jo[3]= "444";
+			document.write(jo.push('555')+"<br/>");
+			document.write(jo+"<br/>")
+		</script>
+		<p>unshift() 向数组的开头添加一个元素到数组中并返回新的长度</p>
+		<script type="text/javascript">
+			var jo = new Array(4);
+				jo[0]= "111";
+				jo[1]= "222";
+			 	jo[2]= "333";
+			 	jo[3]= "444";
+			document.write(jo.unshift('555')+"<br/>");
+			document.write(jo+"<br/>")
+		</script>
+		<p>shift() 删除并返回数组的第一个元素</p>
+	</body> 
+</html>
+ 
