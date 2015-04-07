@@ -1,0 +1,27 @@
+<html>
+	<head>
+	<title>DIV层始终在页面最底部</title>
+	<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<style>
+		.login_bg{
+			background: url(images/w3school_logo_black.gif) 50% bottom no-repeat;
+		}
+	</style>
+	 <script>
+	 $(document).ready(function(){
+		var h = $(window).height(); //浏览器当前窗口可视区域高度
+		$(".login_bg").css("height",h)
+		$(window).resize(function(){
+			location.reload();
+		});
+	})
+	</script>
+
+	</head>
+	<body>
+		<div class="login_bg">
+			<div id="t1" style="position:absolute;border:;width=500">这个是底部div，会一直在网页底部.....</div>
+		</div>
+	</body>
+</html>
