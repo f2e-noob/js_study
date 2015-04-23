@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<style type="text/css">
+		 	p{
+		 		line-height: 30px;
+		 	}
+		</style>
+	</head>
+	<body onload="startTime()">
+		<script type="text/javascript">
+			function startTime()
+			{
+				var tbody = new Date();
+				var h = tbody.getHours();
+				var m = tbody.getMinutes();
+				var s = tbody.getSeconds();
+				document.getElementById("txt").innerHTML = h + ':' + m + ":" + s;
+				t = setTimeout ('startTime()',500) //setTimeout() 方法用于在指定的毫秒数后调用函数或计算表达式。
+			}
+		</script>
+		<div class="" >
+			<div id="txt"></div>
+		</div>
+		<h2>操作日期</h2>
+		<script type="text/javascript">
+			var mydate = new Date();
+			// mydate.setFullYear(2015,7,9)
+			// document.write('导出时间：' + mydate.getTime() + "毫秒")
+			// mydate.setDate(mydate.getDate()+5)
+			var x = mydate.setDate(mydate.getDate()+5);
+			document.write(x);
+		</script>	
+		<h2>比较日期</h2>	
+		<script type="text/javascript">
+			var myDate = new Date();
+			myDate.setFullYear(2016,3,8)
+
+			var tbody = new Date();
+			if (myDate > tbody){
+				document.write("昨天时间：" + Date() )
+				//alert('这是以前的时间')
+			}else {
+				document.write("今天时间：" + Date() )
+				// alert('这是今天的时间')
+			}
+		</script>	
+		<h2>创建数组</h2>
+		<script type="text/javascript">
+			var mycars = new Array(3);
+				mycars[0] = "one"; 
+				mycars[1] = "two";
+				mycars[2] = "three";
+				mycars[3] = "four";
+			// for ( i = 0; i < mycars.length; i++){
+			// 	document.write(mycars[i] + "<br/>")
+			// }
+			for (var i = 0, len = array.length; i < len; i++){
+				document.write(mycars[i] + "<br/>")
+			}
+			// for(var i = Array.length - 1; i >= 0; i--){
+			// 	document.write(mycars[i] + "<br/>")
+			// }
+		</script>	
+		<h3>For...In 声明</h3>
+		<script type="text/javascript">
+			var mycars = new Array();
+				mycars[0] = "one"; 
+				mycars[1] = "two";
+				mycars[2] = "three";
+				mycars[3] = "four";
+			var x
+			for ( x in mycars ){
+				document.write(mycars[x] + "<br/>")
+			}
+		</script>			
+		<h2>合并两个数组 - concat()</h2>
+		<script type="text/javascript">
+			var arr = new Array(3);
+				arr[0] = "1111";
+				arr[1] = "2222";
+				arr[2] = "3333";
+				arr[3] = "4444";
+
+			var arr2 = new Array(2);
+			 	arr2 [0]= "5555";
+			 	arr2 [1]= "6666";
+			document.write(arr.concat(arr2));
+		</script>
+		<h2>用数组的元素组成字符串 - join()</h2>
+		<script type="text/javascript">
+			var arr = new Array(3);
+				arr[0] = "1111";
+				arr[1] = "2222";
+				arr[2] = "3333";
+				arr[3] = "4444";
+			document.write(arr.join(" * "));
+		</script>
+		<h2>创建 Boolean 对象</h2>
+		<script type="text/javascript">
+			var myBoolean =new Array(5);
+			 	myBoolean[0] =  Boolean('true');
+				myBoolean[1] = Boolean("");
+				myBoolean[2] =  Boolean(0);
+				myBoolean[3] =  Boolean(false);
+				myBoolean[4] =  Boolean(NaN);
+			document.write( myBoolean + "<br/>");
+			
+			var myBoolean =new Array(5);
+				myBoolean[0] =  Boolean(1);
+				myBoolean[1] = Boolean(true);
+				myBoolean[2] =  Boolean("true");
+				myBoolean[3] =  Boolean("Bill Gates");
+			document.write( myBoolean + "<br/>");
+			
+		</script>
+		<h2>round() 方法可把一个数字舍入为最接近的整数。</h2>
+		<script type="text/javascript">
+			document.write(Math.round(0.5) + "<br/>")
+			document.write(Math.round(-0.5) + "<br/>")
+			document.write(Math.round(4.2) + "<br/>")
+			document.write(Math.round(-0.9) + "<br/>")
+		</script>
+		<h2>random() 来返回 0 到 1 之间的随机数。</h2>
+		<script type="text/javascript">
+			document.write(Math.random() + "<br/>");
+			document.write(Math.random() + "<br/>");
+		</script>
+		<h2>max()</h2>
+		<script type="text/javascript">
+			document.write(Math.max(7,9) + "<br/>");
+			document.write(Math.min(7,9) + "<br/><br/><br/><br/>");
+			
+			document.write(Math.floor(Math.random()*11)) 
+		</script>
+	</body>
+</html>
+ 

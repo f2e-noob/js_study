@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+		<style type="text/css">
+		 	p{
+		 		line-height: 30px;
+		 	}
+		</style>
+	</head>
+	<body>
+		<h1>JS 实例</h1>
+		<h2>基础 JavaScript 实例</h2>
+		<p>
+			生成文本 //document.write('hello');<br/>
+			生成普通文本和标签///document.write('<h5>hello</h5>');<br/>
+			head 部分 // <head>脚本</head><br/>
+			body 部分 //<body onload="value()">加载！</body><br/>
+			外部 JavaScript //  script<br/>
+		</p>
+		<h2>JavaScript 语句、注释和代码块</h2>
+		<p>JavaScript 语句</p>
+		<p>JavaScript 代码块</p>
+		<p>JavaScript 单行注释</p>
+		<p>JavaScript 多行注释</p>
+		<p>使用单行注释来防止执行</p>
+		<p>使用多行注释来防止执行</p>
+		<table class="table table-hover table-bordered">
+			<thead>
+				<tr>
+					<th>名称</th>
+					<th>代码</th>
+					<th>档案资料</th>
+					<th>地理位置</th>
+					<th>项目测点信息</th>
+					<th>图片</th>
+					<th>责任单位</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>武汉光谷大桥</td>
+					<td>WH014521</td>
+					<td>加密一级文档</td>
+					<td>湖北-武汉</td>
+					<td>100条</td>
+					<td>暂无</td>
+					<td>武汉</td>
+				</tr>
+				<tr>
+					<td>武汉光谷大桥</td>
+					<td>WH014521</td>
+					<td>加密一级文档</td>
+					<td>湖北-武汉</td>
+					<td>100条</td>
+					<td>暂无</td>
+					<td>武汉</td>
+				</tr>
+				<tr>
+					<td>武汉光谷大桥</td>
+					<td>WH014521</td>
+					<td>加密一级文档</td>
+					<td>湖北-武汉</td>
+					<td>100条</td>
+					<td>暂无</td>
+					<td>武汉</td>
+				</tr>
+				<tr>
+					<td>武汉光谷大桥</td>
+					<td>WH014521</td>
+					<td>加密一级文档</td>
+					<td>湖北-武汉</td>
+					<td>100条</td>
+					<td>暂无</td>
+					<td>武汉</td>
+				</tr>
+				<tr>
+					<td>武汉光谷大桥</td>
+					<td>WH014521</td>
+					<td>加密一级文档</td>
+					<td>湖北-武汉</td>
+					<td>100条</td>
+					<td>暂无</td>
+					<td>武汉</td>
+				</tr>
+				<tr>
+					<td>武汉光谷大桥</td>
+					<td>WH014521</td>
+					<td>加密一级文档</td>
+					<td>湖北-武汉</td>
+					<td>100条</td>
+					<td>暂无</td>
+					<td>武汉</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>JavaScript 条件语句 If ... Else</h2>
+		<script type="text/javascript">
+			var r=Math.random();
+			if(r>0.5){
+				document.write("<a href='baidu.com' style='font-size:15px;font-weight:bold;'>请点击百度网址</a>")
+			}else{
+				document.write("<a href='vip.com' style='font-size:15px; font-weight:bold;'>进入唯品会</a>")
+			}
+		</script>
+		<h2>提示框</h2>
+		<button class="btn btn-primary" onclick="onshowTip()">点击提示</button>
+		<script type="text/javascript">
+			function onshowTip(){
+				var name = prompt('用户名','赵潇潇')
+				if(name != '' && name !='num'){
+					document.write('你好！'+ name + '欢迎登录')
+				}
+			}
+		</script>
+		<h2>带有参数的函数</h2>
+		<button class="btn btn-success" onclick="myfunction('您好!')">点击按妞</button>
+		<script type="text/javascript">
+			function myfunction(txt){
+				alert(txt)
+			}
+		</script>
+		<script type="text/javascript">
+			function backFunction(){
+				return('您好! 欢迎再次访问...')
+			}
+		</script>
+		<h2>返回值的函数</h2>
+		<script type="text/javascript">
+			document.write(backFunction())
+		</script>
+
+		<script type="text/javascript">
+			function backFunction(a,b){
+				return a*b
+			}
+		</script>
+		<h2>带有参数的返回值的函数</h2>
+		<script type="text/javascript">
+			document.write(backFunction(5,5))
+		</script>
+		<h2>For 循环</h2>
+	
+		<p id="txt"></p>
+		<button class="btn btn-danger" onclick="mynumber()">点击按钮</button>
+		<script type="text/javascript">
+			function mynumber(){
+				var t = ""
+				for(var i=0; i < 5 ; i++){
+					t = t + "this is number " + i + "<br/>"
+					document.getElementById("txt").innerHTML= t;
+				}
+			}
+		</script>
+		<script type="text/javascript">
+				for(var i=0; i < 5 ; i++){
+					document.write(i+"<br/>")
+				}
+		</script>
+				
+		<h2>while 循环</h2>
+		<script type="text/javascript">
+			i=0;
+			while(i<=5){
+				document.write("数字"+i+"<br/>")
+				i++;
+			}
+		</script>
+		<h2>do while 循环</h2>
+		<script type="text/javascript">
+			var i=0;
+			do{
+				document.write('数字是：'+ i + "<br/>");
+				i++
+			}
+			while(i<=5)
+		</script>
+		<h2>break</h2>
+		<script type="text/javascript">
+			for(var i=0; i<10; i++){
+				if(i==3){break}
+				document.write(i+"<br/>");
+			}
+		</script>
+		<h2>continue</h2>
+		<script type="text/javascript">
+			for (var i = 0 ; i<=10; i++){
+				if(i==5){continue}
+				document.write(i+"<br/>")
+			}
+		</script>
+		<h2>使用 For...In 声明来遍历数组内的元素</h2>
+		<script type="text/javascript">
+			var x ="";
+			var cars = new Array();
+				cars [0] = "宝马";
+				cars [1] = "奥迪";
+				cars [2] = "名图";
+				cars [3] = "大众";
+			for(x in cars){
+				document.write(cars[x] + "<br/>")
+			}
+		</script>
+		<h1>JavaScript 错误处理</h1>
+		<h2>try...catch 语句</h2>
+	</body>	
+</html>
+ 

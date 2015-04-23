@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+		<style type="text/css">
+		 	p{
+		 		line-height: 30px;
+		 	}
+		</style>
+	</head>
+	<body onload="startTime()">
+		<h2>JavaScript 计时事件 setTimeout带有停止按钮的无穷循环中的计时事件</h2>
+		<div class="form-inline" style="margin-top:13px;">
+			<button class="btn btn-success" onclick="timedCount()">开始计时</button>
+			<input type="text" class="form-control" style="width:250px;" id="txt2">
+		</div>
+		<script type="text/javascript">
+			var c=0
+			function timedCount(t)
+			{
+				document.getElementById('txt2').value=c
+				c=c+1
+				t = setTimeout("timedCount()",1000)
+			}
+		</script>
+
+		<table class="table table-bordered table-striped" style="margin-top:15px">
+			<thead>
+				<tr>
+					<th class="text-center" width="50px;">
+						<label>
+							<input type="checkbox" class="ace" id="id-checkbox-all">		
+							<span class="lbl"></span>
+						</label>
+					</th>
+					<th>#</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Username</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="text-center">
+						<label>
+							<input type="checkbox" class="ace">		
+							<span class="lbl"></span>
+						</label>
+					</td>
+					<td>1</td>
+					<td>Mark</td>
+					<td>Tompson</td>
+					<td>the_mark7</td>
+					<td width="70px" class="text-center">
+						<a href="user.html"> <i class="fa fa-pencil"></i>
+						</a>
+						&nbsp;&nbsp;
+						<a href="#myModal" role="button" data-toggle="modal"> <i class="fa fa-trash-o"></i>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="text-center">
+						<label>
+							<input type="checkbox" class="ace">		
+							<span class="lbl"></span>
+						</label>
+					</td>
+					<td>2</td>
+					<td>Mark</td>
+					<td>Tompson</td>
+					<td>the_mark7</td>
+					<td width="70px" class="text-center">
+						<a href="user.html">
+							<i class="fa fa-pencil"></i>
+						</a>
+						&nbsp;&nbsp;
+						<a href="#myModal" role="button" data-toggle="modal">
+							<i class="fa fa-trash-o"></i>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="text-center">
+						<label>
+							<input type="checkbox" class="ace">		
+							<span class="lbl"></span>
+						</label>
+					</td>
+					<td>6</td>
+					<td>Mark</td>
+					<td>Tompson</td>
+					<td>the_mark7</td>
+					<td width="70px" class="text-center">
+						<a href="user.html">
+							<i class="fa fa-pencil"></i>
+						</a>
+						&nbsp;&nbsp;
+						<a href="#myModal" role="button" data-toggle="modal">
+							<i class="fa fa-trash-o"></i>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<script type="text/javascript">
+			$(function(){
+				$("#id-checkbox-all").click(function(){
+			      $("input[name='chk']").prop("checked", $("#id-checkbox-all").prop("checked"));
+			    });
+			})
+		</script>
+		<p>使用window.location.replace() or window.location.href(), 来重新加载此页面不出现提示框</p>
+		<script type="text/javascript">
+			function refresh()
+			{
+			 window.focus(); //刷新窗口
+			 document.execCommand("Refresh"); //刷新窗口
+			 self.location.reload();  //刷新当前窗口
+			 parent.location.reload();  //刷新父窗口
+			 aaa.location.reload(); //弹出窗口刷新父窗口
+			}   
+		</script>
+		<p>val(function(index, value))</p>
+		<p>设置每一个匹配元素的值。function(index, value)Function此函数返回一个要设置的值。接受两个参数，index为元素在集合中的索引位置，text为原先的text值。
+		</p>
+		<input type="text" class="item form-control" style="width:200px;">
+		<script type="text/javascript">
+			$(function(){
+				$('input:text.item').val(function(){
+					return this.value + '输入姓名：' + this.className;
+				})
+			})
+		</script>
+		<h2>JavaScript 计时事件 setTimeout带有停止按钮的无穷循环中的计时事件并且有停止的事件</h2>
+		<div class="form-inline" style="margin-top:13px;">
+			<button class="btn btn-warning" onclick="timedCount2()">开始计时</button>
+			<input type="text" class="form-control" style="width:250px;" id="txt3">
+			<button class="btn btn-danger" onclick="stopCount()">停止计时</button>
+		</div>
+		<script type="text/javascript">
+			var c=0
+			var t
+			function timedCount2()
+			{
+				document.getElementById('txt3').value=c
+				c=c+1
+				t = setTimeout("timedCount2()",1000)
+			}
+			function stopCount()
+			{
+				clearTimeout(t);
+			}
+		</script>
+		<h2>使用计时事件制作的钟表</h2>
+		<script type="text/javascript">
+			function startTime()
+			{
+				var today = new Date();
+					h = today.getHours();
+					m = today.getMinutes();
+					s = today.getSeconds();
+				document.getElementById('txt').innerHTML=h+":"+m+":"+s
+				t=setTimeout('startTime()',1000)
+			}
+		</script>
+		<div id="txt"></div>
+		<h2>创建一个欢迎 cookie</h2>
+		<script type="text/javascript">
+			function getCookie(c_name)
+			{
+			if (document.cookie.length>0)
+			{ 
+			c_start=document.cookie.indexOf(c_name + "=")
+			if (c_start!=-1)
+			{ 
+			c_start=c_start + c_name.length+1 
+			c_end=document.cookie.indexOf(";",c_start)
+			if (c_end==-1) c_end=document.cookie.length
+			return unescape(document.cookie.substring(c_start,c_end))
+			} 
+			}
+			return ""
+			}
+
+			function setCookie(c_name,value,expiredays)
+			{
+			var exdate=new Date()
+			exdate.setDate(exdate.getDate()+expiredays)
+			document.cookie=c_name+ "=" +escape(value)+
+			((expiredays==null) ? "" : "; expires="+exdate.toGMTString())
+			}
+
+			function checkCookie()
+			{
+			username=getCookie('username')
+			if (username!=null && username!="")
+			  {alert('Welcome again '+username+'!')}
+			else 
+			  {
+			  username=prompt('Please enter your name:',"")
+			  if (username!=null && username!="")
+			    {
+			    setCookie('username',username,365)
+			    }
+			  }
+			}
+		</script>
+		<h2>JavaScript 库</h2>
+		<p> JavaScript 框架： jQuery、Prototype、MooTools。</p>
+		<h4>jQuery</h4>
+		<p>jQuery 是目前最受欢迎的 JavaScript 框架。它使用 CSS 选择器来访问和操作网页上的 HTML 元素（DOM 对象）。jQuery 同时提供 companion UI（用户界面）和插件。</p>
+		<hr/>
+		<h4>Prototype</h4>
+		<p>Prototype 是一种库，提供用于执行常见 web 任务的简单 API。
+API 是应用程序编程接口（Application Programming Interface）的缩写。它是包含属性和方法的库，用于操作 HTML DOM。
+Prototype 通过提供类和继承，实现了对 JavaScript 的增强。</p>
+		<hr/>
+		<h4>MooTools</h4>
+		<p>MooTools 也是一个框架，提供了可使常见的 JavaScript 编程更为简单的 API。
+MooTools 也含有一些轻量级的效果和动画函数。</p>
+		<h2> 框架库 - jQuery</h2>
+		<script type="text/javascript">
+			function myFunction()
+			{
+				var obj=document.getElementById("h01");
+				obj.innerHTML="Hello jQuery";
+			}
+			onload=myFunction;
+		</script>
+		<p id="h01"></p>
+		<p>//方法二 onclick="myFunction()" 删除javascript里面的onload=myFuction;
+			<button class="btn btn-success">按钮</button> 
+		</p>
+		<script type="text/javascript">
+			function myFunction()
+			{
+				$("#h02").html("Hello jQuery");
+			}
+			$(document).ready(myFunction);
+		</script>
+		<p id="h02"></p>
+		<h2>Prototype 描述</h2>
+		<p>Prototype 提供的函数可使 HTML DOM 编程更容易。与 jQuery 类似，Prototype 也有自己的 $() 函数。
+$() 函数接受 HTML DOM 元素的 id 值（或 DOM 元素），并会向 DOM 对象添加新的功能。
+与 jQuery 不同，Prototype 没有用以取代 window.onload() 的 ready() 方法。相反，Prototype 会向浏览器及 HTML DOM 添加扩展。</p>
+		<script type="text/javascript">
+			function myFunction(){
+				document.getElementById('Prototype').innerHTML = 'hello word';
+			}
+			onload=myFunction;
+		</script>
+		<p id="Prototype"></p>
+
+		<script type="text/javascript">
+			function myFunction3(){
+				$('Prototype2').insert("hello word");
+			}
+			Event.observe(window,"load",myFunction3);
+		</script>
+		<p id="Prototype2"></p>
+
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script>
+		function myFunction()
+			{
+			$("h001").insert("Hello Prototype!");
+			}
+			Event.observe(window,"load",myFunction);
+		</script>
+		<P id="h001"></P>
+
+		<h1>JS 实例</h1>
+		<h2>基础 JavaScript 实例</h2>
+		<p>
+			生成文本 //document.write('hello');<br/>
+			生成普通文本和标签///document.write('<h5>hello</h5>');<br/>
+			head 部分 // <head>脚本</head><br/>
+			body 部分 //<body onload="value()">加载！</body><br/>
+			外部 JavaScript //  script<br/>
+		</p>
+		<h2>JavaScript 语句、注释和代码块</h2>
+	</body>	
+</html>
+ 

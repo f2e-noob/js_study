@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<style type="text/css">
+		 	p{
+		 		line-height: 30px;
+		 	}
+		</style>
+	</head>
+	<body>
+		 <h2>JavaScript  for循环</h2>
+		 <script type="text/javascript">
+		 	cars = ["Bills","Kown","Javascript","TE:EES"];
+		 	for (var i=2; i < cars.length; i++) 
+		 	{
+		 		document.write(cars[i] + "<br/>");
+		 	}
+		 </script>
+		 <h2>For/In 循环</h2>
+		 <div id="forin"></div>
+		 <button class="btn btn-success" onclick="forIn()">点击按钮</button>
+		 <script type="text/javascript">
+		 	function forIn(){
+		 		var x;
+			 	var txt = "";
+			 	var persons = {irstname: "xia",lastname: "qing",  age:56}
+			 	for (x in persons){
+			 		txt = txt + persons[x];
+			 	}
+			 	document.getElementById('forin').innerHTML = txt;
+		 	}
+		 </script>
+		 <h2>while 循环</h2>
+		 <script type="text/javascript">
+		 	function btnWhile(){
+		 		var x = "",i = 0;
+		 		while (i<5){
+		 			x = x + "this is number" + i + "<br/>";
+		 			i++;
+		 		}
+				document.getElementById('whileValue').innerHTML = x;				
+		 	}
+		 </script>
+		  <div id="whileValue"></div>
+		 <button class="btn btn-info" onclick="btnWhile()">点击按钮</button>
+		 <h2>do/while 循环</h2>
+		 <p>do/while 循环是 while 循环的变体。该循环会执行一次代码块，在检查条件是否为真之前，然后如果条件为真的话，就会重复这个循环。</p>
+		 <script type="text/javascript">
+		 	function btnDowhile(){
+		 		var x = " ",i=0;
+		 		do{
+		 			x = x + "number" + i + "<br/>";
+		 			i++;
+		 		}
+		 		while(i<6)
+		 		document.getElementById('dowhileValue').innerHTML = x;
+		 	}
+		 </script>
+		 <p id="dowhileValue"></p>
+		 <button class="btn btn-warning" onclick="btnDowhile()">点击按钮</button>
+		 <h2>比较 for 和 while</h2>
+		 <script type="text/javascript">
+		 	cars = ["one","two","three"];
+		 	var i = 0;
+		 	for (;cars[i];)
+		 	{
+		 		document.write(cars[i] + "<br/>")
+		 		i++;
+		 	}
+		 </script>
+		 <br/>
+		 <script type="text/javascript">
+		 	cars = ["one","two","three"];
+		 	var i = 0;
+		 	while (cars[i])
+		 	{
+		 		document.write(cars[i] + "<br/>")
+		 		i++;
+		 	}
+		 </script>
+		 <h2>Break 语句</h2>
+		 <p>由于这个 if 语句只有一行代码，所以可以省略花括号：</p>
+		 <script type="text/javascript">
+		 	for (i=0;i<3;i++)
+		 	{
+		 		if (i==3)
+		 		{
+		 			break;
+		 		}
+		 		document.write("this is number" + i + '<br/>');
+		 	}
+		 </script>
+		 <h2>Continue 语句</h2>
+		 <p>continue 语句中断循环中的迭代，如果出现了指定的条件，然后继续循环中的下一个迭代。</p>
+		 <script type="text/javascript">
+		 	for (i=0;i<9;i++)
+		 	{
+		 		if (i==3)
+		 		{
+		 			continue;
+		 		}
+		 		document.write("this is number" + i + '<br/>');
+		 	}
+		 </script>
+		 <h2>JavaScript 标签</h2>
+		 <script type="text/javascript">
+		 	cars=["BMW","Volvo","Saab","Ford"];
+			list:
+				{
+					document.write(cars[0] + "<br>");
+					document.write(cars[1] + "<br>");
+					document.write(cars[2] + "<br>");
+					break list;
+					document.write(cars[3] + "<br>");
+					document.write(cars[4] + "<br>");
+					document.write(cars[5] + "<br>");
+				}
+		 </script>
+	</body>	
+</html>
+ 

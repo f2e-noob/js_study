@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<style type="text/css">
+		 	p{
+		 		line-height: 30px;
+		 	}
+		</style>
+	</head>
+	<body>
+		<h1>Markdown学习</h1>
+		<h2>段落、标题、区块代码</h2>
+		 Markdown 支持两种标题的语法，Setext 和 atx 形式。Setext 形式是用底线的形式，利用 = （最高阶标题）和 - （第二阶标题），Atx 形式在行首插入 1 到 6 个 # ，对应到标题 1 到 6 阶。
+
+区块引用则使用 email 形式的 '>' 角括号。
+ 		<h2>修辞和强调</h2>
+		<h2>调用带参数的函数</h2>
+		<p>
+			**This is the second paragraph in the blockquote.**
+			_ This is the second paragraph in the blockquote._
+		</p>
+		<h2>列表</h2>
+		<p>无序列表使用星号、加号和减号来做为列表的项目标记，这些符号是都可以使用的，使用星号</p>
+		<p>有序的列表则是使用一般的数字接着一个英文句点作为项目标记</p>
+		<p>
+			* Candy.
+			* Gum.
+			* Booze
+			- Candy.
+			- Gum.
+			- Booze
+			+ Candy.
+			+ Gum.
+			+ Booze
+			1. Candy.
+			2. Gum.
+			3. Booze
+		</p>
+		<h2>链接</h2>
+		<p>Markdown 支援两种形式的链接语法： 行内 和 参考 两种形式，两种都是使用角括号来把文字转成连结。</p>
+		<p>this is for [example](http://www.baidu.com/ "website") link</p>
+		<h2>图片</h2>
+		<p>![][id]:</p>
+		<h2>代码</h2>
+		<p>在一般的段落文字中，你可以使用反引号 ` 来标记代码区段，区段内的 &、< 和 > 都会被自动的转换成 HTML 实体，这项特性让你可以很容易的在代码区段内插入 HTML 码：</p>
+		<p>发动机撒飞机的撒范德萨空间看节点外分泌`<标注>`平凡的事`#标注`</p>
+		
+		<h2>调用带参数的函数</h2>
+		<script type="text/javascript">
+			function myfunction(name,job){
+				alert(" wellcome " + name + " the " + job);
+			}
+		</script>
+		<button class="btn btn-danger" onclick="myfunction('Bill','CEO')">点击按钮</button>
+		<button class="btn btn-warning" onclick="myfunction('Towibla tiw','IT')">点击按钮</button>
+		<h2>带有返回值的函数</h2>
+		
+		<div id="mult-num"></div>
+		<script type="text/javascript">
+			function mult(a,b){
+				return a * b
+			}
+			document.getElementById('mult-num').innerHTML=mult(4,3);
+		</script>
+		<h2>对字符串和数字进行加法运算</h2>
+		<p>如果把数字与字符串相加，结果将成为字符串。</p>
+		<script type="text/javascript">
+			x = 5 + 5
+			document.write(x + '<br/>');
+			x = '5' + 5
+			document.write(x + '<br/>');	
+			x = 5 +'5'
+			document.write(x + '<br/>');
+			x = '5' + '5'
+			document.write(x + '<br/>');					
+		</script>
+		<h2>if语句</h2>
+		<p>如果时间早于 20:00，会获得问候 "Good day"。</p>
+		<p>当前的时间：<span id="time-text"></span></p>
+		<button class="btn btn-primary" onclick=timeHours()>点击按钮</button>
+		<script type="text/javascript">
+			function timeHours() {
+				var x 
+				var time = new Date().getHours();
+
+				if ( time < 20 ){
+					x ="good day"
+				}else{
+					x = "good evening"
+				}
+				document.getElementById('time-text').innerHTML=x;
+			}
+		</script>
+		<h2>Switch 语句</h2>
+		<p>显示当前的时间：<span id="now_time"></span></p>
+		<button class="btn btn-info" onclick="nowTime()">获取当前的时间</button>
+		<script type="text/javascript">
+			function nowTime(){ 
+				var x ;
+				var d = new Date().getDay();
+				switch (d){
+					case(0):
+					x="Today is Sunday";
+					break;
+					case(1):
+					x="Today is 一";
+					break;
+					case(2):
+					x="Today is 二";
+					break;
+					case(3):
+					x="Today is 三";
+					break;
+					case(4):
+					x="Today is 四";
+					break;
+					case(5):
+					x="Today is 五";
+					break;
+					case(6):
+					x="Today is 六";
+					break;
+				}
+				document.getElementById('now_time').innerHTML = x ;
+			}
+		</script>
+		<h3>default 关键词</h3>
+		<p>显示星期几：<span id="now_time3"></span></p>
+		<button class="btn btn-success" onclick="time2()">获取当前的时间</button>
+		<script type="text/javascript">
+			function time2(){
+				var x;
+				var t = new Date().getDay();
+				switch (t){
+					case 5:
+					x = "555555555";
+					break;
+
+					case 2:
+					x = "22222222";
+					break;
+
+					default:
+					x = "xxxxxxxxx"
+				}
+				document.getElementById('now_time3').innerHTML = x;
+			}
+		</script>
+	</body>	
+</html>
+ 

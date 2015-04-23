@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<style type="text/css">
+		 	p{
+		 		line-height: 30px;
+		 	}
+		</style>
+	</head>
+	<body>
+ 		<h1>JS 对象实例</h1> 
+		 <p>prototype 属性使您有能力向对象添加属性和方法</p>
+		 <h3>Array 对象方法</h3>
+		 <p>concat()方法用于连接两个或多个数组。</p>
+		 <script type="text/javascript">
+		 	var arr = new Array(3);
+		 		arr[0] = "one";
+		 		arr[1] = "two";
+		 		arr[2] = "three";
+
+		 	var arr2 = new Array(1);
+		 		arr2[0] = "1111"
+		 	document.write(arr.concat(arr2));
+		 </script>
+		<p>join() 把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔</p>
+		<script type="text/javascript">
+			var jo = new Array(4);
+				jo[0]= "1111";
+				jo[1]= "222";
+			 	jo[2]= "333";
+			 	jo[3]= "4444"
+			document.write(jo.join("*"))
+		</script>
+		<p>pop() 删除数组的最后一个元素并且返回值 长度减1</p>
+		<script type="text/javascript">
+			var jo = new Array(4);
+				jo[0]= "1111";
+				jo[1]="222";
+			 	jo[2]="333";
+			 	jo[3]="4444";
+			document.write(jo.pop()+"<br/>");
+			document.write(jo+"<br/>");
+		</script>
+		<p>push() 向数组的结尾添加一个元素到数组中并返回新的长度</p>
+		<script type="text/javascript">
+			var jo = new Array(4);
+				jo[0]= "111";
+				jo[1]= "222";
+			 	jo[2]= "333";
+			 	jo[3]= "444";
+			document.write(jo.push('555')+"<br/>");
+			document.write(jo+"<br/>")
+		</script>
+		<p>unshift() 向数组的开头添加一个元素到数组中并返回新的长度</p>
+		<script type="text/javascript">
+			var jo = new Array(4);
+				jo[0]= "111";
+				jo[1]= "222";
+			 	jo[2]= "333";
+			 	jo[3]= "444";
+			document.write(jo.unshift('555')+"<br/>");
+			document.write(jo+"<br/>")
+		</script>
+		<p>shift() 删除并返回数组的第一个元素</p>
+		<script type="text/javascript">
+			var jo =new Array(4);
+				jo[0] = "111";
+				jo[1] = "222";
+				jo[2] = "222";
+			document.write(jo.shift()+"<br/>")
+		</script>
+		<h2>JavaScript 计时事件</h2>
+		<b>clearTimeout</b>取消setTimeout();
+		<b>setTimeout</b>未来的某种执行代码
+	</body> 
+</html>
+ 
