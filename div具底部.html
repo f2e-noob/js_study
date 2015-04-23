@@ -9,19 +9,15 @@
 		}
 	</style>
 	 <script>
-	 $(document).ready(function(){
-		var h = $(window).height(); //浏览器当前窗口可视区域高度
-		$(".login_bg").css("height",h)
-		$(window).resize(function(){
-			location.reload();
-		});
+	 
 	})
 	</script>
 
 	</head>
 	<body>
+		<div id="t1" style="border:double; position:fixed; bottom:0; width=500px; height:30px;">这个是底部div，会一直在网页底部.....</div>
 		<div class="login_bg">
-			<div id="t1" style="position:absolute;border:double;width=500">这个是底部div，会一直在网页底部.....</div>
+			
 		</div>
 	</body>
 </html>
