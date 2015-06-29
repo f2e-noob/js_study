@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<link href="css/bootstrap.css" type="text/css">
+		<style type="text/css">
+			#even{
+				width:500px;
+				height: 100px;
+				margin:10px auto;
+				border:1px solid green;
+			}
+			#odd{
+				width:500px;
+				height: 100px;
+				margin:10px auto;
+				border:1px solid red;
+			}
+		</style>
+	<body>
+		<div id="even"></div>
+		<div id="odd"></div>
+		<script type="text/javascript">
+			// for(i=0;i<=100;i++){
+			// 	if( i%2 == 0){
+			// 		document.getElementById('even').innerHTML += ' ' + i;
+			// 	}else{
+			// 		document.getElementById('odd').innerHTML += ' ' + i;
+			// 	}
+			// }
+
+
+			// var i = 0;
+			// do{
+			// 	i += 2;
+			// }while(i < 10);
+			// alert(i)
+
+			// var count = 10;
+			// for(var i=0; i<=count; i++){
+			// 	alert(i)
+			// }
+
+			var num = 0;
+			outermost:
+			for( var i=0; i<10; i++){
+				for(var j=0; j<10; j++){
+					if( i == 5  && j == 5){
+						break outermost;
+					}
+					num++;
+				}
+			}
+			alert(num);
+
+		</script>	 		 
+	</body>
+</html>
+ 
