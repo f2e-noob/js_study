@@ -23,16 +23,58 @@
 		<div id="even"></div>
 		<div id="odd"></div>
 		<script type="text/javascript">
-			$(function(){
-				function addSomeNumber(num){
-					return num + 100;
+			// $(function(){
+			// 	function addSomeNumber(num){
+			// 		return num + 100;
+			// 	}
+			// 	function addSomeNumber(num){
+			// 		return num + 200
+			// 	}
+			// 	var result = addSomeNumber(400);
+			// 	alert(result);
+			// }) 
+			
+			//动态属性
+			// var person = new Object();
+			// person.fristname = "hello"
+			// person.lastname = "qing"
+			// alert(person.fristname);
+
+			// var name = "xia"
+			// name.age = 27;
+			// alert(name.age);
+
+			// var num1 = 1;
+			// var num2 =num1;
+			// alert(num2);
+
+			// var obj1 = new Object;
+			// var obj2 = obj1;
+			// obj1.name = 99;
+			// debugger;
+			// console.log(obj2.name);
+			// alert(obj2.name);
+
+			//传递参数
+			// function addTen(num){
+			// 	num = num + 10;
+			// 	return num;
+			// }
+			// var count = 10;
+			// var result = addTen(count);
+			// alert(count);
+			// alert(result);
+
+			var color = "red";
+			function changColor(){
+				if(color === "red"){
+					color = "red";
+				}else{
+					color = "blue";
 				}
-				function addSomeNumber(num){
-					return num + 200
-				}
-				var result = addSomeNumber(400);
-				alert(result);
-			})
+			}
+			changColor();
+			alert('color is value ' + color);
 		</script>	 		 
 	</body>
 </html>
