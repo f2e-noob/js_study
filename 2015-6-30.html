@@ -65,16 +65,37 @@
 			// alert(count);
 			// alert(result);
 
-			var color = "red";
-			function changColor(){
-				if(color === "red"){
-					color = "red";
-				}else{
-					color = "blue";
-				}
+			// var color = "red";
+			// function changColor(){
+			// 	if(color === "red"){
+			// 		color = "red";
+			// 	}else{
+			// 		color = "blue";
+			// 	}
+			// }
+			// changColor();
+			// alert('color is value ' + color);
+
+			//申明变量
+			function add(num1,num2){
+				var num = num1 + num2;
+				return num;
 			}
-			changColor();
-			alert('color is value ' + color);
+			var result = add(10,20);
+			alert(result);
+			alert(num);
+
+			// Object() 
+
+			//Object对象定义的两种方式
+			var person = new Object();
+			person.name = "xia";
+			person.age = 19;
+
+			var person = {
+				name:"xia",
+				age: 20
+			}
 		</script>	 		 
 	</body>
 </html>
