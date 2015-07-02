@@ -52,9 +52,39 @@
 			 // color[3] = "yellow";
 			 // alert(color);
 
-			 var colors = ['red', 'green','blue'];
-			 colors.length = 2;
-			 alert(colors[2]);
+			 // var colors = ['red', 'green','blue'];
+			 // colors.length = 3;
+			 // colors[colors.length] = 'block';
+			 // colors[colors.length] = 'yellow';
+			 // alert(colors);
+			 // if(colors.isArray()){
+
+			 // }
+			 // var colors=['red','blue','green'];
+			 // alert('toString: '+ colors.toString());
+			 // alert('valueOf: '+colors.valueOf());
+			 // alert('正常的输出: '+colors);
+
+			 var person1 ={
+			 	toLocaleString:function(){
+			 		return "1";
+			 	},
+			 	toString:function(){
+			 		return "2";
+			 	}
+			 };
+			 var person2 ={
+			 	toLocaleString:function(){
+			 		return "11";
+			 	},
+			 	toString:function(){
+			 		return "22";
+			 	}
+			 }
+			 var person=[person1 , person2];
+			 alert(person);
+			 alert(person.toString());
+			 alert(person.toLocaleString());
 		</script>	 		 
 	</body>
 </html>
