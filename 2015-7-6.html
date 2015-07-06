@@ -23,8 +23,63 @@
 		<div id="even"></div>
 		<div id="odd"></div>
 		<script type="text/javascript">
-			var nums = ['1','2','3','4','5','6','7'];
-			var 
+			// var nums = ['1','2','3','4','5','6','7'];
+			// // var removed = nums.splice(1,2);			//删除
+			// // var insert = nums.splice(7,0,"8","9");	//插入
+			// var insert2 = nums.splice(6,1,"8","9");     //替换
+			// alert(nums);
+			// alert(insert);
+			// alert(insert2);
+
+			// 位置方法：  8 7 6 5 4 3 2 1 0						
+			// 位置方法：  0 1 2 3 4 5 6 7 8 9
+			var numbers = [1,2,3,4,5,6,7,8,2,4];
+			// alert(numbers.indexOf(4));
+			// alert(numbers.lastIndexOf(4));
+			// alert(numbers.indexOf(6,4));  //5  第一个参数是指  第二个索引对应的与参数值一样的后面的数字
+			// alert(numbers.indexOf(5,4));  //4
+			// alert(numbers.indexOf(2,1));  //1
+			// alert(numbers.indexOf(4,3));  //1
+			alert(numbers.lastIndexOf(2,9)); //2
+			// alert(numbers.indexOf(2,5));  //2  
+
+			// alert(numbers.indexOf(5,3));  //4
+			// alert(numbers.indexOf(4,4));  //8
+			// alert(numbers.indexOf(3,4));  //-1
+			// alert(numbers.lastIndexOf(4,4));
+
+			// 位置里面有两个参数的时候
+
+			// 迭代方法
+			// var numbers = [1,2,3,4,5,6,7,8,9];
+			// var everyResult = numbers.every(function(item,index,array){
+			// 	return(item > 2);
+			// })
+			// alert(everyResult);
+
+			// var someResult = numbers.some(function(item,index,array){
+			// 	return(item > 2 );
+			// })
+			// alert(someResult);
+			
+			// var filterResult = numbers.filter(function(item,index,array){
+			// 	return(item > 2);
+			// })
+			// alert(filterResult);
+
+			// var mapResult = numbers.map(function(item,index,array){
+			// 	return item*2;
+			// })
+			// alert(mapResult);
+
+			//Date类型
+			// var someDate = new Date('May 25,2004');
+			// alert(someDate);
+
+			// var date = new Date();
+			// var years = date.getFullYear();
+			// alert(years);
+
 		</script>	 		 
 	</body>
 </html>
