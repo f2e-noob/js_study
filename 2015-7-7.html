@@ -8,13 +8,13 @@
 		<style type="text/css">
 			#even{
 				width:500px;
-				height: 100px;
+				height:100px;
 				margin:10px auto;
 				border:1px solid green;
 			}
 			#odd{
 				width:500px;
-				height: 100px;
+				height:100px;
 				margin:10px auto;
 				border:1px solid red;
 			}
@@ -23,7 +23,12 @@
 		<div id="even"></div>
 		<div id="odd"></div>
 		<script type="text/javascript">
-			 
+			var text = "this has been a short summer";
+			var pattern = /(..)or(.)/g;	 
+			if(pattern.test(text)){
+				alert(RegExp.$1);
+				alert(RegExp.$2);
+			}
 		</script>	 		 
 	</body>
 </html>
