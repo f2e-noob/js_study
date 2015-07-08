@@ -52,14 +52,24 @@
 			// alert(trueFactorial(5));
 			// alert(factroial(5));
 
-			window.color = "red";
-			var o = {color:"blue"};
-			function sayColor(){
-				alert(this.color);
+			//函数内部属性
+			// window.color = "red";
+			// var o = {color:"blue"};
+			// function sayColor(){
+			// 	alert(this.color);
+			// }
+			// sayColor();
+			// o.sayColor = sayColor;
+			// o.sayColor();
+
+			//函数属性和方法
+			function sayName(name){
+				alert(name);
 			}
-			sayColor();
-			o.sayColor = sayColor;
-			o.sayColor();
+			function num(num1,num2){
+				return num = num1 + num2;
+			}
+			
 		</script>	 		 
 	</body>
 </html>
