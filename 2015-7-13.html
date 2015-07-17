@@ -57,10 +57,21 @@
 			// // alert(stringValue.charCodeAt(1));
 			// // alert(stringValue[2]);							
 			// alert(stringValue.concat('red','!'))
-			var num = "1234567890";
-			alert(num.slice(2));
-			alert(num.substr(2,3));
-			alert(num.substring(2,5));
+			// var num = "hello world";
+			// alert(num.slice(2));
+			// alert(num.substr(2,3));
+			// alert(num.substring(2,5));
+			// alert(num.indexOf("o"));
+			// alert(num.lastIndexOf("o"));
+
+			var stringValue = "|   hello world   |"
+			// var trimStringValue = stringValue.trim();
+			// alert(stringValue);
+			// alert(trimStringValue);
+			alert(stringValue.toLowerCase());
+			alert(stringValue.toUpperCase());
+			alert(stringValue.toLocaleLowerCase());
+			alert(stringValue.toLocaleUpperCase());
 		</script>	 		 
 	</body>
 </html>
@@ -68,4 +79,89 @@
 
 
 
+<div class="modal fade in" id="projectImg">
+  <form id="upload-form" action="" class="form-horizontal">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="#img-selection" data-toggle="tab">图片选择</a>
+        </li>
+        <li>
+          <a href="#img-upload" data-toggle="tab">图片上传</a>
+        </li>
+        <li>
+          <a href="#img-net" data-toggle="tab">网络图片</a>
+        </li>
+      </ul>
+    </div>
+    <div class="modal-body">
+      <div class="tab-content">
+        <div id="img-selection" class="tab-pane fade active in">
+          <ul class="thumbnails">
+            <li class="span2" data-url="/image/559ca361cf8e9b5faf646c86/1436328801_qq图片20150708115956.png?1436328801">
+              <img src="/thumbnail/559ca361cf8e9b5faf646c86/1436328801_qq图片20150708115956.png?1436328801" alt="qq图片20150708115956.png" class="img-polaroid"></li>
+          </ul>
+        </div>
+        <div id="img-upload" class="tab-pane fade">
+          <div class="control-group">
+            <label class="control-label" for="imgFile">选择图片</label>
+            <div class="controls">
+              <input type="file" name="imgFile"></div>
+          </div>
+        </div>
+        <div id="img-net" class="tab-pane fade">
+          <div class="control-group">
+            <label class="control-label" for="imgFile">图片地址</label>
+            <div class="controls">
+              <input type="text" name="imgurl"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="pagination pull-left">
+        <ul>
 
+          <li class="disabled">
+            <a>上一页</a>
+          </li>
+
+          <li class="active">
+            <a href="#" data-page="1">1</a>
+          </li>
+
+          <li>
+            <a href="#" data-page="2">2</a>
+          </li>
+
+          <li>
+            <a href="#" data-page="3">3</a>
+          </li>
+
+          <li>
+            <a href="#" data-page="4">4</a>
+          </li>
+
+          <li>
+            <a href="#" data-page="2">下一页</a>
+          </li>
+
+        </ul>
+      </div>
+      <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+      <button class="btn btn-primary" id="confirm-cover" data-dismiss="modal">确定</button>
+      <button type="submit" class="btn btn-primary hide" id="confirm-upload">上传</button>
+      <button type="submit" class="btn btn-primary hide" id="confirm-fetch">抓取</button>
+    </div>
+  </form>
+</div>
+ 
+
+<div class="toggle-slide active">
+	<div class="toggle-inner" style="width: 80px; margin-left: 0px;">
+		<div class="toggle-on active" style="height: 20px; width: 40px; text-align: center; text-indent: -10px; line-height: 20px;">ON</div>
+		<div class="toggle-blob" style="height: 20px; width: 20px; margin-left: -10px;"></div>
+		<div class="toggle-off" style="height: 20px; width: 40px; margin-left: -10px; text-align: center; text-indent: 10px; line-height: 20px;">OFF</div>
+	</div>
+</div>
