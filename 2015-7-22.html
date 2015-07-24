@@ -23,7 +23,31 @@
 		<div id="even"></div>
 		<div id="odd"></div>
 		<script type="text/javascript">
-						 
+			// var colorText ="red,blue,green,yellow";
+			// var colors1 = colorText.split(",");
+			// var colors2 = colorText.split(",",2);
+			// var colors3 = colorText.split(/[^\,]+/);
+			// alert(colors3);
+
+			// localeCompare()方法 比较两个字符串并返回值中的一个	
+			// var stringValue = "yellow";
+			// alert(stringValue.localeCompare("break"));
+			// alert(stringValue.localeCompare("yellow"));
+			// alert(stringValue.localeCompare("ye"));
+			function determineOrder(value){
+				var result = stringValue.localeCompare(value);
+				if( result < 0 ){
+					alert("The string 'yellow' comes before the string ' " + value + " ' ," );
+				}else if( result > 0 ){
+					alert("The string 'yellow' comes after the string ' "+ value +" ' , ");
+				}else{
+					alert("The string 'yellow' is equal to the string ' "+ value +" ' , ");
+				}
+				debugger;
+				determineOrder("brick");
+				determineOrder("yellow");
+				determineOrder("zoo");
+			}
 		</script>	 		 
 	</body>
 </html>
