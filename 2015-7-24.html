@@ -23,8 +23,18 @@
 		<div id="even"></div>
 		<div id="odd"></div>
 		<script type="text/javascript">
-			 var max = Math.max(3,43,32,2,1);
-			 alert(max);
+			$(function(){
+				var max = Math.max(3,43,32,2,1);
+				var min = Math.min(3,43,32,2,-1);
+				document.getElementById('even').innerHTML=max;
+				document.getElementById('odd').innerHTML=min;
+
+			})
+
+			//Math 方法 舍入方法
+			alert(Math.ceil(25.8));
+			alert(Math.floor(25.8));
+			alert(Math.round(25.4));
 		</script>	 		 
 	</body>
 </html>
