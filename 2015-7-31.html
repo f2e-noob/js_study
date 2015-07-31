@@ -35,31 +35,15 @@
 		</style>
 	<body>
 		<div class="wrap">
-			<ul>
-				<li><a href="images/ipad_big.jpg" title="苹果ipad"><img src="images/ipad.jpg"></a></li>
-				<li><a href="images/mac_big.jpg" title="苹果mac 你的最爱"><img src="images/mac.jpg"></a></li>
-				<li><a href="images/ipod_big.jpg" title="苹果ipod 听音乐的最好享受"><img src="images/ipod.jpg"></a></li>
-				<li><a href="images/iphone_big.jpg" title="苹果iphone 逼个神器"><img src="images/iphone.jpg"></a></li>
-			</ul>
+			<a href="http://www.baidu.com">获取触发事件的元素</a>
 		</div> 
 		<script type="text/javascript">
 			$(function(){
-				var x = 0;
-				var y = 0;
-				$(".wrap ul li a").mouseover(function(e){
-					this.myTitle = this.title;
-					this.title = "";
-					var imgTitle = this.myTitle? "<br/>" + this.myTitle: "";
-				 	var tooltip = "<div class='tipsImg'><img src="+ this.href +" alt='产品预览图'/>"+ imgTitle +"</div>"
-				 	$('body').append(tooltip);
-				 	$('.tipsImg').css({
-				 		"top":(e.pageY + y)+ "px",
-				 		"left":(e.pageX + x)+ "px"
-				 	})
-				 }).mouseout(function(){
-				 	this.title=this.myTitle;
-				 	$('.tipsImg').remove();
-				 })
+				$('a').click(function(event){
+					var tg = event.target;
+					alert(tg.href);
+					return false;
+				})
 			})
 		</script>
 	</body>
