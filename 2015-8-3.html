@@ -32,10 +32,23 @@
 			 	line-height: 14px;
 			 	border:1px solid orange;
 			 }
+			 .test{
+			 	background: yellow;
+			 	margin-bottom: 4px;
+			 	border:1px solid red;
+			 	width:100px;
+			 	height:100px;
+			 	position: relative;
+			 	opacity: 0.5;
+			 }
 		</style>
 	<body>
 		<div class="wrap">
 			<a href="http://www.baidu.com">获取触发事件的元素</a>
+			<input type="text" value="初始值">
+			<button type="button" class="btn">点击</button>
+			<button id="dellbtn" type="button">移除按钮</button>
+			<div class="test"></div>
 		</div> 
 		<script type="text/javascript">
 			$(function(){
@@ -44,16 +57,52 @@
 					alert(tg.href);
 					return false;
 				})*/
-				// event.relatedTarget();
-				// event.pageX() and event.pageY();
+				
+				/*$('a').click(function(event){
+					alert("当前的坐标" + event.pageX + "px" + "," + event.pageY + "px"); 
+					return false;
+				})*/
 
-				// $('a').click(function(event){
-				// 	alert("当前的坐标" + event.pageX + "px" + "," + event.pageY + "px"); 
-				// 	return false;
+				/*event which
+				$('a').click(function(event){
+					alert(event.which);
+					return false;
+				})*/
+
+				/*$('input').keyup(function(event){
+					alert(event.which);
+				})*/
+
+				// $(".btn").one('click',function(){
+				// 	$('.test').append("<p>测试内容一</p>")
+				// }).one('click',function(){
+				// 	$('.test').append("<p>测试内容二</p>")
+				// }).one('click',function(){
+				// 	$('.test').append("<p>测试内容三</p>")
 				// })
 
-				// event which
-				
+				// $("#dellbtn").click(function(){
+				// 	$(".btn").unbind();
+				// })
+				// $(".btn").bind("myClick",function(event,message1,message2){
+				// 	$('.test').append("<p>" + message1 + message2 +"</p>")
+				// })
+				// $('.btn').trigger('myClick',['message2','message2']);
+
+				// $('input').trigger('focus');
+				// $('button').click(function(){
+				// 	$("button[type='button']").trigger("click!")
+				// })
+				$('.test').click(function(){
+					$(this).animate({
+						left:"500px",
+						height: "200px",
+						opacity: "1",
+					},300).animate({
+						top:"200px",
+						width:"200px",
+					},3000).fadeOut('slow');
+				})
 			})
 		</script>
 	</body>
