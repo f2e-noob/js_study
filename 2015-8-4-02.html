@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+		<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+		<style type="text/css">
+			body{
+				padding:0; 
+				margin:0 auto; 
+				font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+				width: 1000px;
+			}
+			* {margin:0; padding:0;}
+			ul{
+				margin:0;
+				padding:0;
+			}
+			img{
+				border:none;
+			}
+			.clear{
+				clear:both;
+			}
+			 ul li{
+			 	list-style: none;
+			 	margin:0;
+			 	padding: 0;
+			 }
+			 .wrap{
+			 	width: 500px;
+			 	margin:50px auto;
+			 }
+			.wrap label{
+				margin-right:10px;
+			}
+		</style>
+	<body>
+		<div class="wrap">
+			<form class="form-horizontal">
+				 <h4>你爱好是什么运动？</h4>
+				 <label><input type="checkbox" value="篮球">篮球</label>
+				 <label><input type="checkbox" value="足球">足球</label>
+				 <label><input type="checkbox" value="兵乓球">兵乓球</label>
+				 <label><input type="checkbox" value="冰球">冰球</label>
+				 <label><input type="checkbox" value="保龄球">保龄球</label>
+				 <button type="button" class="btn btn-xs btn-success">全选</button>
+				 <button type="button" class="btn btn-xs btn-warning">全不选</button>
+				 <button type="button" class="btn btn-xs btn-primary">反选</button>
+				 <input type="button" class="btn btn-xs btn-info" value="提交">
+			</form>
+		</div> 
+		<script type="text/javascript">
+			$(function(){
+				$(".btn-success").click(function(){
+					$('input[type="checkbox"]').attr("checked",true);
+				}); 
+				$(".btn-warning").click(function(){
+					$('input[type="checkbox"]').attr("checked",false);
+				});
+				$(".btn-primary").click(function(){
+					$('input[type="checkbox"]').each(function(){
+						//$(this).attr('checked',!$(this).attr('checked'));
+						this.checked=!this.checked;
+					})
+				}); 
+				$(".btn-info").click(function(){
+					var str = "你选中的是：\r\n";
+					$('[type=checkbox]:checked').each(function(){
+						str +=$(this).parent().text() + "\r\n";
+					})
+					alert(str);
+				})
+			})
+		</script>
+	</body>
+</html>
+ 
