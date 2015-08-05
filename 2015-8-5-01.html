@@ -28,17 +28,41 @@
 			 	margin:0;
 			 	padding: 0;
 			 }
-		 
+			 .wrap{
+			 	width: 500px;
+			 	margin:50px auto;
+			 }
+			.wrap label{
+				margin-right:10px;
+			}
 		</style>
 	<body>
 		<div class="wrap">
 			<form class="form-horizontal">
-				  
+				 <h4>你爱好是什么运动？</h4>
+				 <label><input type="checkbox" name="items" value="篮球">篮球</label>
+				 <label><input type="checkbox" name="items" value="足球">足球</label>
+				 <label><input type="checkbox" name="items" value="兵乓球">兵乓球</label>
+				 <label><input type="checkbox" name="items" value="冰球">冰球</label>
+				 <label><input type="checkbox" name="items" value="保龄球">保龄球</label>
+				 <label><input type="checkbox" class="checkedAll">全选/全不选</label>
 			</form>
 		</div> 
 		<script type="text/javascript">
 			$(function(){
-
+				$('[name="items"]:checkbox').click(function(){
+					var $temp = $('[name="items"]:checkbox');
+					$(".checkedAll").prop("checked",$temp.length==$temp.filter(':checked').length)
+				})
+				
+				$('.checkedAll').click(function(){
+					$('[name="items"]').prop('checked',$('.checkedAll').prop('checked'))
+					/*if(this.checked){
+						$('[name="items"]').attr('checked',true);
+					}else{
+						$('[name="items"]').attr('checked',false);
+					}*/
+				})
 			})
 		</script>
 	</body>
