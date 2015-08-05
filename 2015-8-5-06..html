@@ -135,20 +135,20 @@
 		<script type="text/javascript">
 			$(function(){
 	 			//方法一
-	 			/*$('.tab_title').click(function(){
+	 			$('.tab_title').click(function(){
 	 				$(this).addClass('select').siblings('.child_' + this.id).toggle();
 	 				$(this).find("i").toggleClass('fa-caret-up');
-	 			})*/
+	 			}).click();
 
 				//方法二
-				$('.tab_title').toggle(
+				/*$('.tab_title').toggle(
 					function(){
 	 					$(this).addClass('select').siblings('.child_' + this.id).hide();
 	 					$(this).find("i").toggleClass('fa-caret-up');
 	 				},function(){
 						$(this).removeClass('select').siblings('.child_' + this.id).show();
 	 				}
-	 			)
+	 			)*/
 			})
 		</script>
 	</body>
