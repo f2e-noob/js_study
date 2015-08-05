@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+		<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+		<style type="text/css">
+			body{
+				padding:0; 
+				margin:0 auto; 
+				font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+				width: 1000px;
+			}
+			* {margin:0; padding:0;}
+			ul{
+				margin:0;
+				padding:0;
+			}
+			img{
+				border:none;
+			}
+			.clear{
+				clear:both;
+			}
+			 ul li{
+			 	list-style: none;
+			 	margin:0;
+			 	padding: 0;
+			 }
+			 .wrap{
+			 	width: 500px;
+			 	margin:50px auto;
+			 }
+			.wrap label{
+				margin-right:10px;
+			}
+		</style>
+	<body>
+		<div class="wrap">
+			<form class="form-horizontal">
+				 <h4>你爱好是什么运动？</h4>
+				 <label><input type="checkbox" name="items" value="篮球">篮球</label>
+				 <label><input type="checkbox" name="items" value="足球">足球</label>
+				 <label><input type="checkbox" name="items" value="兵乓球">兵乓球</label>
+				 <label><input type="checkbox" name="items" value="冰球">冰球</label>
+				 <label><input type="checkbox" name="items" value="保龄球">保龄球</label>
+				 <label><input type="checkbox" class="checkedAll">全选/全不选</label>
+			</form>
+		</div> 
+		<script type="text/javascript">
+			$(function(){
+				$("[name=items]:checkbox").click(function(){
+					var flag = true;
+					$("[name=items]:checkbox").each(function(){
+						if(!this.checked){
+							flag = false;
+						}
+					})
+					$('.checkedAll').attr('checked',flag);
+				})
+
+				$('.checkedAll').click(function(){
+					if(this.checked){
+						$("[name=items]:checkbox").attr('checked',true);
+					}else{
+						$("[name=items]:checkbox").attr('checked',false);
+					}
+				})
+			})
+		</script>
+	</body>
+</html>
+ 
