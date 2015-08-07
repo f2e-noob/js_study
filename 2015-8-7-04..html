@@ -69,6 +69,23 @@
 			    -moz-border-top-colors: red yellow blue; 
 			    -moz-border-bottom-colors: red yellow blue; 
 			}
+			.appearance{
+				-webkit-appearance:text;
+				   -moz-appearance: text;
+			}
+			.site{
+				width:100px;
+				display: block;
+				height: 20px;
+				background: green;
+				/*margin:0 auto;*/
+				text-align: -moz-center/-webkit-center;
+				word-wrap:break-word;
+				overflow: visible;
+			}
+			div:hover{
+				transform:rotateX(180deg);
+			}
 		</style>
 	<body>
 		<div class="wrap">
@@ -79,6 +96,11 @@
 
 		<div class="border">
 			a比同型号的Times字体更清晰，它有着更矮的x-height。为了弥补这个缺陷，我们可以用 font-size-adjust 属性来纠正后者。这个有用的CSS3属性目前只有Firefox支持。我们可以用它来设定指定元素的文字大小(font-size)应该相对于小写字母的高度(x-height)而不是大写字母的高度(cap height)。比如，Verdana比同
+		</div>
+		<div class="appearance">伪类按钮</div>
+		<span class="site"></span>
+		<div style="width:200px; height:200px; overflow:auto; background-attachment:local">
+			<img src="images/view.jpg" alt="">
 		</div>
 	</body>
 </html>
