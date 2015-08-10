@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+	<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<style type="text/css">
+			body{
+				padding:0; 
+				margin:0 auto; 
+				font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+				width: 1000px;
+			}
+			.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+			  padding-left:5px;
+			}
+			* {margin:0; padding:0;}
+			ul{
+				margin:0;
+				padding:0;
+			}
+			img{
+				border:none;
+			}
+			.clear{
+				clear:both;
+			}
+			 ul li{
+			 	list-style: none;
+			 	margin:0;
+			 	padding: 0;
+			 }
+			.wrap{
+				width:1000px;
+				margin:20px auto;
+			}
+			.article_btn span{
+				float: left;
+				display: block;
+				width: 50%;
+				background: #ccc;
+				color: #fff;
+				line-height: 40px;
+				font-size:16px;
+				text-align: center;
+			}
+			.article_btn .select{
+				background: rgb(96, 160, 237);
+				color: #fff;
+			}	
+			.article_text p{
+				text-indent: 2em;
+				line-height: 24px;
+				font-size:14px;
+			}
+		</style>
+<body>
+	<div class="wrap">
+		<div class="article_btn">
+			<span class="bigger select">放大</span>
+			<span class="smaller">缩小</span>
+		</div>
+		<div class="article_text">
+			<p>
+				包括250多个来自 Glyphicon Halflings 的字体图标。Glyphicons Halflings 一般是收费的，但是他们的作者允许 Bootstrap 免费使用。为了表示感谢，希望你在使用时尽量为 Glyphicons
+			</p> 
+			<p>
+				添加一个友情链接。现代的辅助技术能够识别并朗读由 CSS 生成的内容和特定的 Unicode 字符。为了避免 屏幕识读设备抓取非故意的和可能产生混淆的输出内容（尤其是当图标纯粹作为装饰用途时），我们为这些图标设置了 aria-hidden="true" 属性。
+			</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+			$(function(){
+				 $('span').click(function(){
+				 	var thisEle = $('#article_text p').css('font-size');
+				 	var textFontSize = parseInt(thisEle,10);
+				 	var unit = thisEle.slice(-2);
+				 	var cName = $(this).attr('class');
+				 	if(cName=="bigger"){
+				 		textFontSize +=2;
+				 	}else if(cName=="smaller"){
+				 		textFontSize -=2;	
+				 	}
+				 	$('article_text p').css('font-size',textFontSize + unit)
+				 });
+			})
+		</script>
+</body>
+ 
