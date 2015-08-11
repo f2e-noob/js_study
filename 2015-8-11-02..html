@@ -4,89 +4,58 @@
 	<meta charset="UTF-8">
 	<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+	<link href="css/skin_01.css" type="text/css" rel="stylesheet" id="cssfile">
 	<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<style type="text/css">
-			body{
-				padding:0; 
-				margin:0 auto; 
-				font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
-				width: 1000px;
-			}
-			.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
-			  padding-left:5px;
-			}
-			* {margin:0; padding:0;}
-			ul{
-				margin:0;
-				padding:0;
-			}
-			img{
-				border:none;
-			}
-			.clear{
-				clear:both;
-			}
-			 ul li{
-			 	list-style: none;
-			 	margin:0;
-			 	padding: 0;
-			 }
-			.wrap{
-				width:1000px;
-				margin:20px auto;
-				border:1px solid #ccc;
-			}
-			.tab_menu{
-				height: 30px;
-				margin-bottom: -1px;
-			}
-	 		.tab_menu ul li{
-				width: 33.33%;
-				float: left;
-				line-height: 30px;
-				background: #ccc;
-				text-align: center;
-				cursor: pointer;
-	 		}
-	 		.tab_menu ul li.select{
-	 			background:#fff;
-	 		}
-	 		.tab_box{
-	 			padding:10px 20px;
-	 			border-top:1px solid #ccc;
-	 			height:200px;
-	 			width:100%;
-	 		}
-	 		.tab_box div{
-	 			display: none;
-	 		}
-	 		.tab_box div.cont_select{
-	 			display: block;
-	 		}
-		</style>
 <body>
 	<div class="wrap">
-		 <div class="tab_menu">
-		 	<ul>
-		 		<li class="select">实事</li>
-		 		<li>体育</li>
-		 		<li>娱乐新闻</li>
-		 	</ul>
-		 </div>
-		 <div class="tab_box">
-		 	<div class="cont_select">实事实事实事实事实事实事实事实事实事实事实事</div>
-		 	<div class=" ">体育体育体育体育体育体育体育体育</div>
-		 	<div class=" ">娱乐新闻娱乐新闻娱乐新闻娱乐新闻娱乐新闻娱乐新闻娱乐新闻</div>
-		 </div>
+		<ul id="skin">
+			<li id="skin_01" class="select">红色</li>
+			<li id="skin_02">绿色</li>
+			<li id="skin_03">蓝色</li>
+			<li id="skin_04">橙色</li>
+		</ul>
+		<div class="clear"></div>
+		<div id="div_side_01">
+			<div class="news">
+				新闻
+			</div>
+		</div>
+		<div id="div_side_02">
+			<div class="news">
+				政治
+			</div>
+		</div>
+		<div id="div_side_03">
+			<div class="news">
+				时尚
+			</div>
+		</div>
+		<div id="div_side_04">
+			<div class="news">
+				娱乐
+			</div>
+		</div>
+		<div class="clear"></div>
 	</div>
 	<script type="text/javascript">
-			$(function(){
-				$("ul li").click(function(){
-					$(this).addClass('select').siblings().removeClass('select');
-					var index = $("ul li").index(this);
-					$("div.tab_box > div").eq(index).show().siblings().hide();
-				}) 
-			})
-		</script>
+		$(function(){
+			$("#skin li").click(function(){
+				$("#"+this.id).addClass('select').siblings().removeClass('select');
+				$("#cssfile").attr("href","css/"+ this.id +".css");
+				$.cookie("skin",this.id,{
+					expires:7,
+					path:'/',
+				})
+				var cookie_skin = $.cookie("skin");
+				if(cookie_skin){
+					$("#"+cookie_skin).addClass('select').siblings().removeClass('select');
+					$("#cssfile").attr("href","css/"+ cookie_skin +".css");
+					$.cookie("skin",cookie_skin,{
+						expires:7,
+						path:'/',
+					})
+				}
+			}) 
+		})
+	</script>
 </body>
