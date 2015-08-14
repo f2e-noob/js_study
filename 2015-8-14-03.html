@@ -1,0 +1,331 @@
+{% extends "../../admin/base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="/static/libs/fileupload/jquery.fileupload.css">
+{% end %}
+
+{% block breadcrumb %}
+    <li>
+      <a href="/monitor/project/{{ project['code_name'] }}">{{ project['name']}}</a>
+    </li>
+    <li class="active">训练校准配置</li>
+{% end %}
+
+{% block content %}
+<section id="main" class="column">
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+        </script>
+
+        <ul class="breadcrumb">
+            <li> 
+                <i class="icon-home home-icon"></i>
+                <a href="/admin/project">项目管理</a>
+            </li>
+            <li> 
+                <a href="/admin/project">项目列表</a>
+            </li>
+            <li class="active"><a class="current">评估模型配置({{project.get('name')}})</a></li>
+        </ul>
+    </div>
+    <div class="module width_full">
+        <table class="tablesorter table-hover">
+            <thead>
+                <tr>
+                    <th width="2%" class="text-center;">#</th>
+                    <th>传感器</th>
+                    <th>
+                        训练库
+                        <small class="text-muted">(点击下载)</small>
+                    </th>
+                    <th>输入</th>
+                    <th>输出</th>
+                    <th class="text-center">文件上传</th>
+                    <th class="text-center">输入输出配置</th>
+                    <th class="text-center">
+                        重新训练<a class="icon-refresh retrain-all" title="全部训练"></a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for index, item in enumerate(project.get('monitor_items', [])) %}
+                    <tr data-fn='{{item}}' data-inputnum="{{ config.get(item, {}).get('inputnum', '') }}" data-outputnum="{{ config.get(item, {}).get('outputnum', '') }}">
+                        <td class="text-center;">
+                            {{index  + 1}}
+                        </td>
+                        <td>
+                            {{ monitors.get(item, '') or item }}
+                        </td>
+                        <td>
+                            {% if item + '.csv' in filenames %}
+                                <a href="/static/jars/{{ project['code_name'] }}/{{item}}.csv" title="点击下载">
+                                    传感数据训练库
+                                </a>
+                            {% else %}
+                                <span title="请上传训练文件">传感数据训练库</span>
+                            {% end %}
+                        </td>
+                        <td>
+                            {{ config.get(item , {}).get('inputnum', '') }}
+                        </td>
+                        <td>
+                            {{ config.get(item , {}).get('outputnum', '') }}
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-xs  btn-info fileinput-button">
+                                <span class="icon-cloud-upload"></span>
+                                <input type="file" class="fileupload" name="hhfile" data-form-data='{"fn": "{{item}}"}'>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                           <a class="btn btn-xs btn-warning modal-param">
+                               <span class="icon-cog"></span>
+                           </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-xs btn-success retrain">
+                                <span class="icon-refresh"></span>
+                            </a>
+                        </td>
+                    </tr>
+
+                {% end %}
+                {% set start = len(project.get('monitor_items', [])) %}
+                {% from smlib.sensemodel_reliet import FEATURE_MAP %}
+                {% for index,f in enumerate(features) %}
+                    <tr data-fn='{{ FEATURE_MAP[f] }}' data-inputnum="{{ config.get(FEATURE_MAP[f] , {}).get('inputnum', '') }}" data-outputnum="{{ config.get(FEATURE_MAP[f] , {}).get('outputnum', '') }}">
+                        <td>
+                            {{index  + 1 + start}}
+                        </td>
+                        <td>
+                            {{ f }}
+                        </td>
+                        <td>
+
+                            {% if FEATURE_MAP[f] + '.csv' in filenames %}
+                                <a href="/static/jars/{{ project['code_name'] }}/{{ FEATURE_MAP[f] }}.csv" title="点击下载">
+                                    {{ f }}训练库
+                                </a>
+                            {% else %}
+                                <span title="请上传训练文件">{{ f }}训练库</span>
+                            {% end %}
+                        </td>
+                        <td>
+                            {{ config.get(FEATURE_MAP[f] , {}).get('inputnum', '') }}
+                        </td>
+                        <td>
+                            {{ config.get(FEATURE_MAP[f] , {}).get('outputnum', '') }}
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-xs  btn-info fileinput-button">
+                                <span class="icon-cloud-upload"></span>
+                                <input type="file" class="fileupload" name="hhfile" data-form-data='{"fn": "{{ FEATURE_MAP[f] }}"}'>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <p>123</p>
+                           <a class="btn btn-xs btn-warning modal-param22">
+                               <span class="icon-cog"></span>
+                           </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-xs btn-success retrain">
+                                <span class="icon-refresh"></span>
+                            </a>
+                        </td>
+                    </tr>
+                {% end %}
+            </tbody>
+        </table>
+        <article class="module floatview" style='width:40%; display:none; margin-left:10%;'>
+            <header>
+                <h3 class="tabs_involved">参数配置</h3>
+            </header>
+            <form class="validform form-horizontal" role="form" action="/project/trainconfig/{{project.get('code_name')}}" method="post">
+                <div class="module_content">
+                    <input type="hidden" name="fn">
+                    <div class="form-group">
+                        <label class="col-sm-5 control-label">输入参数个数</label>
+                        <div class="col-sm-2">
+                            <input type="number" class="form-control" min=0 name="inputnum" datatype="*">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-5 control-label">输出参数个数</label>
+                        <div class="col-sm-2">
+                            <input type="number" class="form-control" min=0 name="outputnum" datatype="*">
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <div class="submit_link">
+                        <button type="submit" value="保存" class="btn btn-sm btn-success modal-submit"><i class="icon-ok"></i> 保存</button>
+                        <button type="button" class='close_btn btn btn-sm btn-default'><i class="icon-off"></i> 取消</button>
+                    </div>
+               </footer>
+            </form>
+        </article>
+    </div>
+</section>
+
+<!-- <div id="modal-param" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <span class="black">&times;</span>
+                </button>
+                <h5>参数配置</h5>
+            </div>
+            <form class="form-horizontal" role="form" action="/project/trainconfig/{{project.get('code_name')}}" method="post">
+                <input type="hidden" name="fn">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-sm-5 control-label">输入参数个数</label>
+                        <div class="col-sm-2">
+                            <input type="number" class="form-control" min=0 name="inputnum" datatype="*">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-5 control-label">输出参数个数</label>
+                        <div class="col-sm-2">
+                            <input type="number" class="form-control" min=0 name="outputnum" datatype="*">
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <button class="btn btn-primary modal-submit" type="submit"><i class="icon-ok"></i> 确定</button>
+                    <button type="button" class='close_btn btn btn-sm btn-default'><i class="icon-off"></i> 取消</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+</div> -->
+{% end %}
+
+{% block js %}
+<script src="/static/metro/js/jquery-ui-1.10.3.full.min.js"></script>
+<!-- 文件上传插件 -->
+<script type="text/javascript" src='/static/metro/js/jquery.fileupload.js'></script>
+<script>
+    $(function(){
+        
+        util.setNav('#li-admin-project');
+
+        $('.close_btn').click(function(){
+            $(this).parents('.floatview').hide();
+            $(this).parents('body').find('.moduleDialog').hide();
+        })
+
+        $('#bk47-monitor-manage-nav > li:nth-child(10)').addClass('active');
+
+        var config_url = '/project/trainconfig/{{project.get('code_name')}}',
+            train_url  = '/project/trainann/{{project.get('code_name')}}';
+
+        上传文件
+        $('.fileupload').fileupload({
+            url: config_url,
+            dataType: 'json',
+            done: function (e, data) {
+                var $btn  = $(e.target),
+                    $icon = $btn.closest('.btn').find('.fa');
+                
+                setTimeout(function(){
+                    $icon.removeClass('fa-spinner fa-spin')
+                        .addClass('fa-check');    
+                }, 600);
+            },
+            progressall: function(e, data){
+                var $btn  = $(e.target),
+                    $icon = $btn.closest('.btn').find('.fa');
+
+                $icon.removeClass('fa-cloud-upload').addClass('fa-spinner fa-spin')
+            }
+        });
+
+        // 输入输出表单
+        $('.validform').Validform({
+            ajaxPost: true,
+            tiptype: function(msg, o, cssctl) {
+                if (!o.obj.is("form")) {
+                    var objtip = o.obj.siblings(".Validform_checktip");
+                    cssctl(objtip, o.type);
+                    objtip.text(msg);
+                } else {
+                    var objtip = o.obj.find("#msgdemo");
+                    cssctl(objtip, o.type);
+                    objtip.text(msg);
+                }
+            },
+            callback: function(data) {
+                if (data.status == true) {
+                    $('.modal').modal('hide');
+
+                    setTimeout(function(){
+                        location.reload();
+                    }, 300);
+                } else {
+                    alert('失败!');
+                }
+            }
+        });
+
+
+        // 同步模态框的参数
+        $('.modal-param22').click(function(){
+            var module_dialog=$('<div class="moduleDialog"></div>');
+            $('body').append(module_dialog);
+            var $tr       = $(this).closest('tr'),
+                fn        = $tr.data('fn'),
+                inputnum  = $tr.data('inputnum'),
+                outputnum = $tr.data('outputnum'),
+                $form     = $('.validform');
+
+            $form.find('input[name="fn"]').val(fn);
+            $form.find('input[name="inputnum"]').val(inputnum);
+            $form.find('input[name="outputnum"]').val(outputnum);
+            $('.floatview').show();
+        });
+
+        // 重新训练
+        $('.retrain').click(function(){
+            var $tr       = $(this).closest('tr'),
+                fn        = $tr.data('fn'),
+                inputnum  = $tr.data('inputnum'),
+                outputnum = $tr.data('outputnum'),
+                $form     = $('.validform');
+
+            var $btn  = $(this),
+                $icon = $('.fa', $btn);
+            
+            $icon.addClass('fa-spin');
+
+            $.post(train_url, {
+                fn: fn,
+                inputnum: inputnum,
+                outputnum: outputnum
+            }, function(data){
+                if (data.status === true) {
+                    setTimeout(function(){
+                        $btn.attr('disabled', 'disabled');
+                        $icon.removeClass('fa-spin fa-refresh').addClass('fa-check');
+                    }, 300);
+                } else {
+                    $icon.removeClass('fa-spin');
+                    alert('训练失败');
+                }
+            })
+        });
+
+        // 全部重新训练
+        $('.retrain-all').click(function(){
+            $('.retrain').each(function(index, btn){
+                if (!$(btn).attr('disabled')) {
+                    $(btn).click();
+                }
+            });
+        });
+    });
+</script>
+{% end %}
