@@ -14,21 +14,37 @@
 		 
 	</style>
 <body>
-	 <button type="button" class="btn btn-xs btn-success" id="send">
-	 	按钮颜色
-	 </button>
-	 <div class="comment">
-	 	<h6>张三</h6>
-	 	<div class="para">
-	 		国际贸易有限公司董事会人员之一
-	 	</div>
-	 </div>
-	 <div id="resText">
-	 	<img src="images/mac.jpg" class="para" alt=""/>
-	 </div>
+	<form id ="form1" action="">
+		<p>评论</p>
+		<p>姓名：<input type="text" name="userName" id="userName"></p>
+		<p>内容：<textarea name="content" id="content" cols="30" rows="10"></textarea></p>
+		<p><input type="button" id="send" value="提交"></p>
+	</form>
+	<div id="loading">加载中...</div>
 	<script type="text/javascript">
 		$(function(){
+			/*$("#send").click(function(){
+				$.get("test.html",{
+					username: $("#userName").val(),
+					comtent: $("#content").val()
+				},function(data,textStatus){
+					$("#resText").html(data);
+				})
+			})*/
+
 			$("#send").click(function(){
+				$.get("test.html",$('#form1').serialize(),function(data,textStatus){
+					$("#resText").html(data);
+				})
+			})
+
+			$("#loading").ajaxStart(function(){
+				$(this).show();
+			})
+			$("#loading").ajaxStop(function(){
+				$(this).hide();
+			})
+			/*$("#send").click(function(){
 				$.ajax({
 					type: "GET",
 					url: "test.js",
@@ -42,7 +58,7 @@
 						$("#resText").html(html);
 					}
 				});
-			});
+			});*/
 		});
 	</script>
 </body>
