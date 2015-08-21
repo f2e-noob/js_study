@@ -1,4 +1,4 @@
-(function($){
+,(function($){
 	$.fn.smchajian = function(callback){
 
 	}
@@ -32,4 +32,26 @@
 			$(this).csss({background:'#ccc',color:'red'})
 		})
 	}
+	//插件闭包
+	;(function($){
+		var foo;
+		var bar = functiona(){
+			//代码模块
+		}
+		$.BAR = bar;
+	})(jQuery);
+
+	// jQuery 提供了二个扩展jquery功能方法 jquery.fn.extend() 和 jquery.extend();
+	;(function($){
+		var settings = {validate:false,limit:5,name:"foo"};
+		var options = {validate:true, name: "bar"};
+		var newOptions = $.extend(settings,options);
+	})
+	function foo(options){
+		options = $.extend({
+			name: "bar",
+			length:5,
+			dataType: "xml"
+		},options)
+	}	
 })
