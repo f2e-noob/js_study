@@ -11,10 +11,14 @@
 			width:100px;
 		}
 		.hot{
+			position: relative;
+		}
+		.hot-img{
 			width:22px;
 			height:12px;
 			background: url(images/hot.png) no-repeat;
 			position: absolute;
+			top:-10px;
 		}
 	</style>
 <body>
@@ -22,7 +26,7 @@
 	<ul class="pro_name">
 		<li><a href="" class="hot">耐克</a></li>
 		<li><a href="">耐克</a></li>
-		<li><a href="">耐克</a></li>
+		<li><a href="" class="hot">耐克</a></li>
 	</ul>
 	<script type="text/javascript">
 		$(function(){
@@ -37,7 +41,7 @@
 					alert('回车提交')
 				}
 			})
-			$(".pro_name .hot").append();
+			$(".pro_name").find('.hot').append("<span class='hot-img'></span>");
 		})
 	</script>
 </body>
