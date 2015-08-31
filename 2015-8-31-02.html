@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+	<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+	<style>
+		.wrap{
+			margin:20px auto;
+			width:100px;
+		}
+	</style>
+<body>
+	<ul class="pro_name">
+		<li class="one"><a href="javascript:void(0);" title="11111">1</a></li>
+		<li class="two"><a href="javascript:void(0);" title="22222">2</a></li>
+		<li class="three"><a href="javascript:void(0);" title="33333">3</a></li>
+		<li class="four"><a href="javascript:void(0);" title="44444">4</a></li>
+	</ul>
+	<script type="text/javascript">
+		$(function(){
+			$("ul.pro_name a").click(function(){
+				var title = $(this).attr('title')	
+				alert(title);
+				var cl=$(this).parent().attr("class");
+				$(this).parent().parent().removeClass().addClass('.pro_name'+cl+'star')
+			})	 
+		})
+	</script>
+</body>
