@@ -20,22 +20,14 @@
 	</ul>
 	<script type="text/javascript">
 		$(function(){
-			var jqxhr = $.ajax({url:'example.php'})
-			.success(function(){
-				alert("success")
-			}) 
-			.error(function({
-				alert('error');
-			}))
-			window.$my = {
-				head: $('head'),
-				foot:$('foot'),
-				btn:$('#btnId')
-			}
-			function do_something(){
-
-			}
-			$('.pro_name li').click(function(){
+			/*$('.pro_name').click(function(e){
+				var clicked = $(e.target);
+				clicked.css('background','red')
+			})*/
+			/*$('.pro_name li').click(function(){
+				$(this).css('background','red')
+			})*/
+			$('.pro_name').on('click','li',function(){
 				$(this).css('background','red')
 			})
 		})
