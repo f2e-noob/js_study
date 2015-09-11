@@ -24,6 +24,7 @@
 	</style>
 <body>
 	<div id="the_div">
+		<a href="http://www.baidu.com">百度</a>
 		<span class="scroll_top"><img src="images/top-icon.png"></span>
 	</div>
 	<script type="text/javascript">
@@ -31,6 +32,24 @@
            /*$(document).mousemove(function(e){
            	 $("#the_div").html("x:"+ e.pageX + "y:" + e.pageY)
            })*/ 
+			/*if($('#the_div').find('a')){
+				alert('11')
+			}else{
+				alert('22')
+			}*/
+			/*$('#the_div').click(function(){
+				window.location=$(this).find('a').attr('href');
+				return false;
+			})*/
+			/*function checkWindowSize(){
+				if($(window).width()>1200){
+					console.log('11')
+				}else{
+					console.log('222')
+				}
+			}
+			$(window).resize(checkWindowSize);*/
+			
 		})
 	</script>
 </body>
