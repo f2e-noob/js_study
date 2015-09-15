@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+	<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+	<!--[if lt IE 9]>
+    <script src='jquery-1.9.0.js'></script>
+	<![endif]-->
+	<!--[if gte IE 9]>
+	    <script src='jquery-2.0.0.js'></script>
+	<![endif]-->
+	<style type="text/css">
+		html,body{
+			background: #f1f1f1;
+			padding:0; 
+			margin:0; 
+			height:100%;
+		}
+		.the_div_top{
+			height:50%;
+			margin-bottom: -150px;
+		}
+		#the_div{
+			display: none;
+			margin:0 auto;
+			width: 400px;
+			height:300px;
+			background: #fff;
+			border:1px solid #ccc;
+		}
+	</style>
+<body>
+	<div class="the_div_top"></div>
+	<div id="the_div">
+		<button>close</button>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			/*$("#the_div").fadeIn(function(){
+				$("#the_div button").click($.proxy(function(){
+					$(this).fadeOut();
+				},this));
+			}) */
+			//本地存储
+			$.ajax({
+				url: "ajax.html",
+				type: "GET",
+				dataType:"XML",
+				timeout:1000,
+				cache:false,
+				error:function(xml){
+					alert('11')
+				}
+				success: function(xml){
+					//解析文字...
+				}
+			})
+			$.get('ajax.html',function(xml){
+				//解析文字
+			})
+		})
+	</script>
+</body>
+ 
