@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+	<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+	<!--[if lt IE 9]>
+    <script src='jquery-1.9.0.js'></script>
+	<![endif]-->
+	<!--[if gte IE 9]>
+	    <script src='jquery-2.0.0.js'></script>
+	<![endif]-->
+	<style type="text/css">
+		html,body{
+			background: #f1f1f1;
+			padding:0; 
+			margin:0; 
+			height:100%;
+			font-size:12px;
+		}
+		#frame{
+			width: 300px;
+			padding: 20px;
+		} 
+		.txt{
+			border:1px solid green;
+		}
+	</style>
+<body>
+	<form action="" id="form1">
+		<fieldset id="frame">
+			<legend>输入信息</legend>
+			<div>
+				<label for="">姓名：</label><input type="text" id="Text1">
+			</div>
+			<div>
+				<label for="">年龄：</label><input type="text" id="Text2">
+			</div>
+			<div>
+				<label for="">性别：</label><input type="text" id="Text3">
+			</div>
+		</fieldset>
+	</form>
+	<div class="the_div_top">
+		
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$("#frame input").bind("click",function(e){
+				$objChild = $(e.target);
+				$objChild.addClass("txt");
+			}) 
+		})
+	</script>
+</body>
+ 

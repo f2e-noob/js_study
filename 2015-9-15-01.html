@@ -54,10 +54,18 @@
 					alert('11')
 				}
 				success: function(xml){
+					var frag = $("<ul>")
+					$(xml).find("student").each(function(i){
+						var id = $(this).children("id");
+						var id_value = id.text();
+						email = ($(this).attr("email"));
+						frag.append("<li>" + id_value + "-" + email "</li>")
+					})
 					//解析文字...
+					frag.appendTo("#load")
 				}
 			})
-			$.get('ajax.html',function(xml){
+			$.get('ajax.html?'+（+new Date）,function(xml){
 				//解析文字
 			})
 		})
