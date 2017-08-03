@@ -28,37 +28,127 @@
 			for-in语句<br/>
 			lable<br/>
 			break 与 continue 语句<br/> 
+			with 语句<br/>
+			switch 语句<br/>
+			
+			function 函数
 		</div>
 		<div id="odd">
 			
 		</div>
-		<div>parseInt() parseFloat() 字符串转换成数值</div>
 		<script type="text/javascript">
-				var i = 0;
-				do{
-					i +=2;
-				} while( i < 10);
-				alert(i);
+				// var i = 0;
+				// do{
+				// 	i +=2;
+				// } while( i < 10);
+				// alert(i);
 
-				var i =0;
-				while(i<10){
-					i+=2;
-					alert(i)
-				}
+				// var i =0;
+				// while(i<10){
+				// 	i+=2;
+				// 	alert(i)
+				// }
 
-				var count =10;
-				var i = 0;
-				while(i<count){
-					alert(i);
-					i++
-				}
+				// var count =10;
+				// var i = 0;
+				// while(i<count){
+				// 	alert(i);
+				// 	i++
+				// }
 				
-				var i;
-				for(i = 0; i<count; i++){
-					alert(i);
+				// var i;
+				// for(i = 0; i<count; i++){
+				// 	alert(i);
+				// }
+
+				// var qs = location.search.substring(1);
+				// var hostName = location.hostname;
+				// var url = location.href;
+
+				// with(location){
+				// 	var qs = search.substring(1);
+				// 	var hostName = hostname;
+				// 	var url = href;
+				// }
+
+				// if(i=25){
+				// 	alert('25');
+				// }else(i=35){
+				// 	alert('35');
+				// }else(i=45){
+				// 	alert('45')
+				// }else{
+				// 	alert('other');
+				// }
+
+				// switch(i){
+				// 	case 25:
+				// 	case 35:
+				// 	alert("25 or 35")
+				// 	break;
+				// 	// case 25:
+				// 	// alert('25');
+				// 	// break;
+				// 	// case 35:
+				// 	// alert('35');
+				// 	// break;
+				// 	case 45:
+				// 	alert('45')
+				// 	break;
+				// 	default:
+				// 		alert('other');
+				// }
+
+				// var num =25;
+				// switch(true){
+				// 	case num < 0:
+				// 	alert("Less than 0.");
+				// 	break;
+				// 	case num >= 0 && num <=10:
+				// 	alert("Betwenn 0 and 10.");
+				// 	break;
+				// 	case num >=10 && num <= 20:
+				// 	alert("Between 10 and 20. ");
+				// 	break;
+				// 	default:
+				// 	alert("More than 20. ");
+				// }
+
+				// function sayHi(name, message){
+				// 	alert("Hello " + name + ","+ message);
+				// }
+				// sayHi("xiaqing","niubi")
+
+				// function sum(num1,num2){
+				// 	return num1 + num2;
+				// }
+				// var result = sum(5,10);
+				// alert(result);
+
+				// function diff(num1,num2){
+				// 	if( num1 < num2){
+				// 		return num2 - num1;
+				// 	}else{
+				// 		return num1- num2;
+				// 	}
+				// }
+
+				// function howManyArgs(){
+				// 	alert(arguments.length);
+				// }
+				// howManyArgs("ss",22)
+				// howManyArgs();
+				// howManyArgs(11,2221,21,21)
+
+				function doAdd(){
+					if(arguments.length == 1){
+						alert(arguments[0] + 10);
+					}else if(arguments.length == 2){
+						alert(arguments[0] + arguments[1]);
+					}
 				}
-
-
+				doAdd(10);
+				doAdd(20,30);
 		</script>	 		 
 	</body>
 </html>
