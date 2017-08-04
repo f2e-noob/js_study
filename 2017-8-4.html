@@ -30,22 +30,34 @@
 			break 与 continue 语句<br/> 
 			with 语句<br/>
 			switch 语句<br/>
-			
-			function 函数
+			function 函数<br/>
+			第四章 作用域与内存问题
+			1.动态的属性<br/>
+			2.传递参数<br/>
+			3.检测类型<br/>
+			instanceof操作符<br/>
+			4.延长作用域链<br/>
+			try-catch与witch语句
 		</div>
 		<div id="odd">
 			
 		</div>
 		<script type="text/javascript">
-				function doAdd(){
-					if(arguments.length == 1){
-						alert(arguments[0] + 10);
-					}else if(arguments.length == 2){
-						alert(arguments[0] + arguments[1]);
-					}
-				}
-				doAdd(10);
-				doAdd(20,30);
+				// var person = new Object();
+				// person.name = "Xiaqing";
+				// alert(person.name);
+
+				// function setName(obj){
+				// 	obj.name = "Xiaqing";
+				// }
+
+				// var person = new Object();
+				// setName(person);
+				// alert(person.name);
+
+				alert(person instanceof Object);
+				alert(colors instanceof Array);
+				alert(pattern instanceof RegExp);  
 		</script>	 		 
 	</body>
 </html>
