@@ -40,7 +40,9 @@
 			try-catch与witch语句
 		</div>
 		<div id="odd">
-			
+			第五章 引用类型<br/>
+			1.Object类型(Object有两种,第一种是使用new 操作符后跟Object构造函数;第二种使用对象字面量表示法)<br/>
+			2. 类型
 		</div>
 		<script type="text/javascript">
 				// var person = new Object();
@@ -49,16 +51,53 @@
 
 				// function setName(obj){
 				// 	obj.name = "Xiaqing";
-				// }  
+				// }      
 
 				// var person = new Object();
 				// setName(person);
 				// alert(person.name);
 
-				alert(person instanceof Object);
-				alert(colors instanceof Array);
-				alert(pattern instanceof RegExp);  
+				// alert(person instanceof Object);
+				// alert(colors instanceof Array);
+				// alert(pattern instanceof RegExp);  
+				// window.CollectGarbage();
+
+				// System.gc = function(){
+				// 	if(System.isIeBrowser()){
+				// 		CollectGarbage();
+				// 		setTimeout("CollectGarbage();",1);
+				// 	}
+				// }
+				// window.setInterval("CollectGarbage();",5000)
+				
+				// var person = new Object();
+				// person.name = "Xiaqing";
+				// person.age = 29;
+				// alert(person.name);
+
+				// var person ={
+				// 	"name" : "Xiaqing",
+				// 	"age" : 29
+				// }
+
+				function displayInfo(args){
+					var output = "";
+					if(typeof args.name == "string"){
+						output += "name: " + args.name + "\n";
+					}
+					if(typeof args.age =="number"){
+						output += "age: " + args.age + "\n"; 
+					}
+					alert(output)
+				}
+				displayInfo({
+					name: "Xiaqing",
+					age: 27
+				})
+				displayInfo({
+					name : "zhangxia"
+				})
 		</script>	 		 
 	</body>
-</html>
- 
+</html> 
+  
