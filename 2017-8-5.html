@@ -42,7 +42,9 @@
 		<div id="odd">
 			第五章 引用类型<br/>
 			1.Object类型(Object有两种,第一种是使用new 操作符后跟Object构造函数;第二种使用对象字面量表示法)<br/>
-			2. 类型
+			2. 类型Array 
+				a. 检测数组
+					 instanceof 操作符
 		</div>
 		<script type="text/javascript">
 				// var person = new Object();
@@ -80,23 +82,60 @@
 				// 	"age" : 29
 				// }
 
-				function displayInfo(args){
-					var output = "";
-					if(typeof args.name == "string"){
-						output += "name: " + args.name + "\n";
+				// function displayInfo(args){
+				// 	var output = "";
+				// 	if(typeof args.name == "string"){
+				// 		output += "name: " + args.name + "\n";
+				// 	}
+				// 	if(typeof args.age =="number"){
+				// 		output += "age: " + args.age + "\n"; 
+				// 	}
+				// 	alert(output)
+				// }
+				// displayInfo({
+				// 	name: "Xiaqing",
+				// 	age: 27
+				// })
+				// displayInfo({
+				// 	name : "zhangxia"
+				// })
+
+				// var colors = ['red','green','yellow'];
+				// alert(colors.length);
+				// colors.length = 4;
+				// alert(colors[2 ]);
+
+				// Array.isArray()检测是否是数组格式
+				// 如果是返回true 反之是false
+
+
+				// var colors = ['black','yellow','red']
+				// alert(colors.toString());
+				// alert(colors.valueOf());
+				// alert(colors)
+
+				var person1 = {
+					toLocaleString: function(){
+						return "Xiaqing";
 					}
-					if(typeof args.age =="number"){
-						output += "age: " + args.age + "\n"; 
+					toString:function(){
+						return "zhaoxiaoxiao";
 					}
-					alert(output)
 				}
-				displayInfo({
-					name: "Xiaqing",
-					age: 27
-				})
-				displayInfo({
-					name : "zhangxia"
-				})
+
+				var person2 ={
+					toLocaleString: function(){
+						return "Xiaqing2";
+					}
+					toString: function(){
+						return "zhaoxiaoxiao2";
+					}
+				}
+
+				var people = [person1,person2]
+				alert(people);
+				alert(people.toString());
+				alert(people.toLocaleString());
 		</script>	 		 
 	</body>
 </html> 
