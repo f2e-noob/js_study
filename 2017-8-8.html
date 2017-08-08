@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.css" type="text/css">
+		<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+		<style type="text/css">
+			#even{
+				width:500px;
+				padding:20px; 
+				margin:10px auto;
+				border:1px solid green;
+			}
+			#odd{
+				width:500px; 
+				padding:20px;
+				margin:10px auto;
+				border:1px solid red;
+			} 
+		</style>
+	<body>
+		<div id="even">    
+			
+		</div>
+		<div id="odd">
+			第五章 引用类型<br/>
+			1.Object类型(Object有两种,第一种是使用new 操作符后跟Object构造函数;第二种使用对象字面量表示法)<br/>
+			2. 类型Array 
+				a. 检测数组
+					 instanceof 操作符
+		</div>
+		<script type="text/javascript">
+				
+				var person1 = {
+					toLocaleString: function(){
+						return "Xiaqing";
+					}
+					toString:function(){
+						return "zhaoxiaoxiao";
+					}
+				}
+
+				var person2 ={
+					toLocaleString: function(){
+						return "Xiaqing2";
+					}
+					toString: function(){
+						return "zhaoxiaoxiao2";
+					}
+				}
+
+				var people = [person1,person2]
+				alert(people);
+				alert(people.toString());
+				alert(people.toLocaleString());
+		</script>	 		 
+	</body>
+</html> 
+  
