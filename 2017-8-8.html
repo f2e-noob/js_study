@@ -32,7 +32,7 @@
 			4.队列方法 shif();  unshif();<br/>
 			5.重排序方法 reverse(); sort();<br/>
 			6.操作方法 concat(); slice(); splice();<br/>
-
+			7.位置方法 indexOf(); lastIndexOf();<br/> 
 		</div>
 		<script type="text/javascript">
 				// var colors = new Array();
@@ -101,7 +101,14 @@
 				// alert(colors.slice(2,4));
 				// alert(colors.slice(-2,-1));
 
-				
+				var colors =["red","grenn","black","grey","purple"];
+				// var removed = colors.splice(0,1);
+				// alert(colors);
+				// alert(removed);
+
+				var removed = colors.splice(1,1,"yellow","orange");
+				alert(colors);
+				alert(removed);
 		</script>	 		 
 	</body>
 </html> 
