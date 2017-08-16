@@ -38,109 +38,25 @@
 			10.Date类型 Date.parse(); Date.UTC();<br/>
 			11.继承的方法 toLocaleString(); toString(); valueOf();<br/>
 			12.日期格式化方法  toDateString(); toTimeString(); toLocaleDateString(); toLocaleTimeString(); toUTCString();
-			13.日期与时间组件的方法
+			13.日期与时间组件的方法 getTime(); setTime(); getFullYeaar(); getUTCYear(); setFullYear(); setUTCYear(); getMouth(); getDate(); 
+					getDay(); getHours(); getMinutes(); getSeconds(); getMilliseconds(); getTimezoneOffset();<br/>
+			14.RegExp类型  g： i: m:  ( [ { / ^ $ | ) ? * + . ] } <br/>
+			   1.RegExp 实例属性 global(); ignoreCase(); lastIndex(); multiline(); source();<br/>
+			   2.RegExp 实例方法 exec(); test();<br/>
+			   3.RegExp 构造函数属性;<br/>
+			   4.模式的局限性<br/>
+			 <br/>
 		</div>
 		<script type="text/javascript">
-				// var colors = new Array();
-				// var count = colors.push("red","green");
-				// alert(count);
-
-				// count = colors.push("black");
-				// alert(count);
-
-				// var item = colors.pop();
-				// alert(item);
-
-				// alert(colors.length);
-				// alert(count.lenght)
-
-				// var colors = new Array();
-				// var count = colors.push('red','green');
-				// alert(count); //2
-
-				// count = colors.push('black');
-				// alert(count); // 3
-
-				// var item = colors.shif();
-				// alert(item);   //red
-				// alert(colors.length) //2
-
-				// var colors = new Array();
-				// var count = colors.unshif('red','black');
-				// alert(count);
-
-				// count = colors.unshif('green');
-				// alert(count);
-
-				// var item = colors.pop();
-				// alert(item);
-
-				// var values = [1,8,12,2,15];
-				// values.reverse();
-				// alert(values);
-
-				// var values = [1,8,12,2,15];
-				// values.sort();
-				// alert(values);
-
-				// function compare(values1,values2){
-				// 	if(values1 > values2){
-				// 		return -1;
-				// 	}else if(values1 < values2){
-				// 		return 1;
-				// 	}else{
-				// 		return 0;
-				// 	}
-				// }
-
-				// var values = [1,8,12,2,15];
-				// values.sort(compare);
-				// alert(values)
-
-				// var colors =["red","grenn","black","grey"];
-				// var colors2 = colors.concat('yellow',["white","brown"]);
-				// alert(colors);
-				// alert(colors2);
-
-				// var colors =["red","grenn","black","grey","purple"];
-				// alert(colors.slice(1));
-				// alert(colors.slice(2,4));
-				// alert(colors.slice(-2,-1));
-
-				// var colors =["red","grenn","black","grey","purple"];
-				// var removed = colors.splice(0,1);
-				// alert(colors);
-				// alert(removed);
-
-				// var removed = colors.splice(1,1,"yellow","orange");
-				// alert(colors);
-				// alert(removed);
-
-				// var numbers =[1,2,3,4,5,4,3,2,1];
-				// var everyResult = numbers.every(function(item,index,array){
-				// 	return ( item > 2 );
-				// })
-				// var everyResult2 = numbers.map(function(item,index,array){
-				// 	return item * 2
-				// }) 
-				// alert(everyResult);
-				// alert(everyResult2);
-
-				// var values =[1,2,3,4,5,6];
-				// var sum = values.reduceRight(function(prev, cur,index,array){
-				// 	return prev + cur
-				// })
-				// alert(sum);
-
-				// var someDate = new Date(Date.parse('May 25,2004'));
-				// alert(someDate);
-
-				var start = Date.now();
-				doSomething();
-				var stop = Date.now();
-				alert(stop - start);
-
-
+		// var pattern1 = /[bc]at/i;
+		// var pattern2 = new RegExp("[bc]at","i");
+		var text = "mom and dad and bady";
+		var pattern = /mom ( and dad ( and bady)?)?/gi;
+		var matches = pattern.exec(text);
+		alert(matches.index);
+		alert(matches.input);
+		alert(matches[0]);
+		alert(matches[1]); 
 		</script>	 		 
 	</body>
 </html> 
