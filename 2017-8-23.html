@@ -17,6 +17,30 @@
 				margin:10px auto;
 				border:1px solid red;
 			} 
+			.sel-struct {
+			    z-index: 999;
+			    padding: 0px;
+			    margin: 10px;
+			    color: #fff;
+			    margin: 10px;
+			    background: rgba(255, 255, 255, 0.5);
+			}
+			.sel-struct li {
+		    padding: 7px 10px;
+		    border-bottom: 1px solid rgb(255, 255, 255);
+		    border-top: none;
+		    color: #505050;
+			}
+
+			.struct_box {
+	    padding: 7px 10px 7px;
+	    border-radius: 0px;
+	    font-size: 13px;
+	    font-weight: 600;
+	    /* background-color: rgba(255, 255, 255, 0.5); */
+	    border: 1px solid rgb(232, 232, 232);
+	    color: #5A5A5A;
+	   }opacity: 
 		</style>
 	<body>
 		<div id="even">    
@@ -53,12 +77,20 @@
 				 5. substr(); substring();
 				 16. Boolean 类型 typeof(); instanceof()<br/>
 			   17. Number 类型 toFixed(); toExponential(); toPrecisiong();<br/>
-			   18. String 类型  字符方法  charAt(); charCodeAt(); 字符串操作方法 concat(); slice(); substr(); substring();
-		</div>
+			   18. String 类型  字符方法  charAt(); charCodeAt(); 字符串操作方法 concat(); slice(); substr(); substring(); 
+			   		 字符串位置方法 indexOf(); lastIndexOf();  trim()方法； 字符串大小写转换方法 toLowerCase(); 小写  toUpperCase();  toLocalLowerCase(); toLocalUppercase();  字符串模式匹配方法 match(); search(); replace(); split();  localeCompare(); fromCharCode(); 
+		</div> 
 		<script type="text/javascript">
-			var stringValue = "hello world";
-			alert(stringValue.charCodeAt(1));
-
+			// var stringValue = "hello world";
+			// alert(stringValue.charCodeAt(1));
+			var stringValue = "Lorem ipsum dolor sit amet, consectetur adipisicing elit";
+			var positions = new Array();
+			var pos =stringValue.indexOf("e");
+			while( pos > -1){
+				positions.push(pos);
+				pos = stringValue.indexOf("e", pos + 1);
+			}
+			alert(positions);
 
 		</script>	 		 
 	</body>
