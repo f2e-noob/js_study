@@ -73,24 +73,35 @@
 			   1. 没有重载<br/>
 			   2. 作为值的函数<br/>
 				 3. 函数内部属性  arguments(); this();<br/>
-				 4. 函数的属性和方法 length; prototype  apply(); call();<br/>
+				 4. 函数的属性和方法 length; prototype  apply(); call(); bind();<br/>
 				 5. substr(); substring();
 				 16. Boolean 类型 typeof(); instanceof()<br/>
 			   17. Number 类型 toFixed(); toExponential(); toPrecisiong();<br/>
 			   18. String 类型  字符方法  charAt(); charCodeAt(); 字符串操作方法 concat(); slice(); substr(); substring(); 
-			   		 字符串位置方法 indexOf(); lastIndexOf();  trim()方法； 字符串大小写转换方法 toLowerCase(); 小写  toUpperCase();  toLocalLowerCase(); toLocalUppercase();  字符串模式匹配方法 match(); search(); replace(); split();  localeCompare(); fromCharCode(); 
-		</div> 
+			   		 字符串位置方法 indexOf(); lastIndexOf();  trim()方法； 字符串大小写转换方法 toLowerCase(); 小写  toUpperCase();  toLocalLowerCase(); toLocalUppercase();  字符串模式匹配方法 match(); search(); replace(); split();  localeCompare(); fromCharCode(); <br/>
+			16. 单体内置对象<br/> 
+			    1.Global和Math
+			      encodeURI(); encodeURIComponent()  decodeURI decodeURIComponet();<br/>
+			    2.eval(); <br/>
+			    3.Math(); min(); max(); ceil(); floor(); round(); random();
+ 		</div> 
 		<script type="text/javascript">
 			// var stringValue = "hello world";
 			// alert(stringValue.charCodeAt(1));
-			var stringValue = "Lorem ipsum dolor sit amet, consectetur adipisicing elit";
-			var positions = new Array();
-			var pos =stringValue.indexOf("e");
-			while( pos > -1){
-				positions.push(pos);
-				pos = stringValue.indexOf("e", pos + 1);
-			}
-			alert(positions);
+			// var stringValue = "Lorem ipsum dolor sit amet, consectetur adipisicing elit";
+			// var positions = new Array();
+			// var pos =stringValue.indexOf("e");
+			// while( pos > -1){
+			// 	positions.push(pos);
+			// 	pos = stringValue.indexOf("e", pos + 1);
+			// }
+			// alert(positions);
+
+			var values = [1,2,3,4,5,6,7,8];
+			var max = Math.max.apply(Math,values);
+			alert(max);
+
+			var num = Math.floor(Math.random*10 + 1)
 
 		</script>	 		 
 	</body>
