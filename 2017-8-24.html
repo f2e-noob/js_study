@@ -83,7 +83,11 @@
 			    1.Global和Math
 			      encodeURI(); encodeURIComponent()  decodeURI decodeURIComponet();<br/>
 			    2.eval(); <br/>
-			    3.Math(); min(); max(); ceil(); floor(); round(); random();
+			    3.Math(); min(); max(); ceil(); floor(); round(); random();<br/>
+
+			第六章 面向对象的程序设计<br/>
+			  1. 理解对象<br/> 
+			  2. 属性类型  Object.defineProperty()修改属性默认的特征;
  		</div> 
 		<script type="text/javascript">
 			// var stringValue = "hello world";
@@ -97,12 +101,75 @@
 			// }
 			// alert(positions);
 
-			var values = [1,2,3,4,5,6,7,8];
-			var max = Math.max.apply(Math,values);
-			alert(max);
+			// var values = [1,2,3,4,5,6,7,8];
+			// var max = Math.max.apply(Math,values);
+			// alert(max);
+			// var num = Math.floor(Math.random*10 + 1)
 
-			var num = Math.floor(Math.random*10 + 1)
+			// function selectFrom(lowerValue, upperValue){
+			// 	var choices = upperValue - lowerValue+1;
+			// 	return Math.floor(Math.random()*choices + lowerValue);
+			// }
+			// var num = selectFrom(2,10);
+			// alert(num);
 
+			// var stringValue = "hello";
+			// alert(stringValue.length);
+
+			// var person = new Object();
+			// person.name = "xiaq";
+			// person.age = 28;
+			// person.job = "chengxu";
+			// person.sayName = function(){
+			// 	alert(this.name);
+			// };
+			// person.sayName();
+
+			// var person ={
+			// 	name:"xiaq",
+			// 	age: 27,
+			// 	job: "chengxu",
+			// 	sayName:function(){
+			// 		alert(this.name);
+			// 	}
+			// };
+			// person.sayName();
+
+			// var person = {};
+			// Object.defineProperty(person,"name",{
+			// 	writable: true,
+			// 	value:"xiaq"
+			// });
+			// alert(person.name);
+			// person.name = "xiaq2";
+			// alert(person.name);
+
+			// var person = {};
+			// Object.defineProperty(person,"name",{
+			// 	configurable: true,
+			// 	value:"xiaq"
+			// });
+			// alert(person.name);
+			// delete person.name;	
+			// alert(person.name);
+
+			var book = {
+				_year: 2004,
+				edition: 1
+			};
+			Object.defineProperty(book,"year",{
+				get:function(){
+					return this._year;
+				},
+				set:function(newValue){
+					if(newValue > 2004){
+						this._year = newValue;
+						this.edition += newValue - 2004;
+					}
+				}
+			})
+			book.year = 2005;
+			alert(book.edition);
 		</script>	 		 
 	</body>
 </html> 
